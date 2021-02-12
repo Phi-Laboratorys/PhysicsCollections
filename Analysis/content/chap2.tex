@@ -1,0 +1,224 @@
+\section{Der Grenzwert einer Folge}
+
+\begin{frameddefn}[Folge]
+	Eine Funktion $f\st \N \to \R$ wird Folge genannt und die Werte $a_n = f(n)$ werden als n-tes Glied der Folge bezeichnet
+\end{frameddefn}
+
+\begin{frameddefn}[$\varepsilon$-Umgebung]
+	Sei $\varepsilon > 0$. Das Intervall $v(a, \varepsilon) = (a-\varepsilon, a+\varepsilon)$ wird $\varepsilon$-Umgebung genannt.
+\end{frameddefn}
+
+\begin{frameddefn}[Konvergenz einer Folge]
+	Sei $(a_n)_{n\geq1}$ eine Folge reeller Zahlen.\\ $(a_n)_{n \geq 1}$ konvergiert gegen $a \in \R$, also $\lim_{n \to \infty} a_n = a$, wenn gilt:
+	\begin{align*}
+		\forall \varepsilon > 0\st \exists n_0 \in \N\st \forall n \geq n_0\st |a_n - a| < \varepsilon
+	\end{align*}
+\end{frameddefn}
+
+\subsection{Eigenschaften der Grenzwerte}
+
+\begin{frameddefn}[Beschränktheit]
+	\begin{enumerate}
+		\item [(i)] Eine Folge $(a_n)_{n\geq 1}$ heißt nach \textit{oben beschränkt}, falls $\exists K \in \R\st \forall n \in \N\st a_n \leq K$
+		\item [(ii)] Eine Folge $(a_n)_{n\geq 1}$ heißt nach \textit{unten beschränkt}, falls $\exists K \in \R\st \forall n \in \N\st a_n \geq K$
+		\item [(ii)] Eine Folge $(a_n)_{n\geq 1}$ heißt \textit{beschränkt}, falls $\exists K \in \R\st \forall n \in \N\st |a_n| \leq K$
+	\end{enumerate}
+\end{frameddefn}
+
+\begin{framedthm}
+	Jede konvergente Folge ist beschränkt.
+\end{framedthm}
+
+\begin{framedthm}[Eindeutigkeit des Limes]
+	Der Grenzwert einer konvergenten Folge ist immer eindeutig.
+\end{framedthm}
+
+\begin{framedthm}[Algebraische Operationen mit dem Limes]
+	Seien $(a_n)_{n\geq 1}$ und $(b_n)_{n\geq 1}$ Folgen, sodass $\lim\limits_{n \to \infty} a_n = a$ und $\lim\limits_{n \to \infty} b_n = b$.
+	\begin{enumerate}
+		\item[(i)]  $\lim\limits_{n \to \infty} a_n + b_n = a + b$
+		\item[(ii)]  $\lim\limits_{n \to \infty} a_n \cdot b_n = a \cdot b$
+		\item[(iii)] $b \neq 0 \Rightarrow \exists N \in \N\st \forall n \geq N\st b_n \neq 0$ sowie \\
+		$\lim\limits_{n \to \infty} \frac{a_n}{b_n} = \frac{a}{b}$ 
+	\end{enumerate}
+	
+\end{framedthm}
+
+\begin{framedthm}[Sandwich Theorem]
+	\begin{enumerate}
+		\item[(i)] Seien $(x_n)_{n\geq 1}$ und $(y_n)_{n\geq 1}$ Folgen mit $\lim\limits_{n \to \infty} x_n = x$ und $\lim\limits_{n \to \infty} y_n = y$. Wenn $x < y$ folgt $\exists N \in \N\st \forall n \geq N\st x_n < y_n$.
+		\item[(ii)] Seien $(x_n)_{n\geq 1}$ und $(y_n)_{n\geq 1}$ Folgen mit $\lim\limits_{n \to \infty} x_n = x$ und $\lim\limits_{n \to \infty} y_n = y$.\\Wenn $\forall n \geq n_0\st x_n \leq y_n$ folgt $x \leq y$.
+		\item[(iii)] Seien $(a_n)_{n\geq 1}$ $(b_n)_{n\geq 1}$ und $(c_n)_{n\geq 1}$ Folgen, sodass $\forall n\geq 1\st a_n \leq b_n \leq c_n$. Wenn $a_n$ und $c_n$ konvergieren mit $\lim\limits_{n \to \infty} a_n = \lim\limits_{n \to \infty} c_n$, dann konvergiert $b_n$ mit\\$\lim\limits_{n \to \infty} b_n = \lim\limits_{n \to \infty} a_n = \lim\limits_{n \to \infty} c_n$ (Sandwich Theorem).
+	\end{enumerate}
+\end{framedthm}
+
+\begin{frameddefn}[Uneigentliche Konvergenz]
+	Eine Folge $(a_n)_{n\geq 1}$ heißt \textit{uneigentlich konvergent} gegen $\infty$ (bzw. $-\infty$) wenn 
+	\begin{align*}
+		\forall K \in \R\st \exists n_0 \in \N\st \forall n \geq n_0\st a_n > K\ \ \textrm{(bzw.}\ \  a_n < K\textrm{)}
+	\end{align*}
+	
+\end{frameddefn}
+
+
+
+\begin{framedthm}
+	\begin{enumerate}
+		\item[(i)] Sei $(a_n)_{n\geq 1}$ eine Folge, die gegen $\pm \infty$ konvergiert. Dann folgt $\exists N \in \N\st \forall n \geq N\st a_n \neq 0$ sowie $\lim\limits_{n \to \infty} \frac{1}{a_n} = 0$
+		\item[(ii)] Sei $(a_n)_{n\geq 1}$ eine Folge, sodass $\lim\limits_{n \to \infty} \frac{1}{a_n} = 0$. Mit der Annahme $\forall n \geq N\st a_n > 0$ (bzw. $a_n < 0$) folgt $\lim\limits_{n \to \infty} \frac{1}{a_n} = \infty$ (bzw. $-\infty$).
+	\end{enumerate}
+\end{framedthm}
+
+\newpage
+\section{Das Cauchysche Konvergenzkriterium}
+
+\begin{frameddefn}[Cauchy Folge]
+	Eine Folge heißt Cauchy Folge genau dann, wenn\begin{align*}
+		\forall \varepsilon > 0\st \exists n_0 \in \N\st \forall n,m \geq n_0\st |a_n - a_m| < \varepsilon
+	\end{align*}
+\end{frameddefn}
+
+
+\begin{framedthm}
+	Jede konvergente Folge ist eine Cauchy Folge
+\end{framedthm}
+
+\begin{frameddefn}[Teilfolgen]
+	Sei $(a_n)_{n\geq 1}$ eine Folge und $n_1 < n_2 < n_3 < ...$ eine aufsteigende Folge natürlicher Zahlen, dann heißt die Folge $(a_{n_k})_{k \geq 1}$ $(a_{n_1}, a_{n_2}, a_{n_3}, ...)$ Teilfolge von $(a_n)_{n\geq 1}$.
+\end{frameddefn}
+
+\begin{framedthm}[Bolzano-Weierstraß]
+	Jede beschränkte Folge reeller Zahlen besitzt mindestens eine konvergente Teilfolge.
+\end{framedthm}
+
+\begin{framedthm}[Intervallschachtelungs-Prinzip]
+	Sei $I_1 \supset I_2 \supset I_3 \supset ...$ eine absteigende Folge von abgeschlossenen Intervallen in $\R$, sodass $\lim_{k \to \infty} l(I_k) = 0$. Dann $\exists! x_0 \in \R\st \forall k \geq 1\st x_0 \in I_k$
+\end{framedthm}
+
+\begin{frameddefn}[Monoton wachsende bzw. fallende Folgen]
+	Eine Folge $(a_n)_{n\geq 1}$ heißt
+	\begin{itemize}
+		\item \textit{monoton wachsend}, falls $\forall n \geq 1\st a_n \geq a_{n+1}$
+		\item \textit{streng monoton wachsend}, falls $\forall n \geq 1\st a_n > a_{n+1}$
+		\item \textit{monoton fallend}, falls $\forall n \geq 1\st a_n \leq a_{n+1}$
+		\item \textit{streng monoton fallend}, falls $\forall n \geq 1\st a_n < a_{n+1}$
+	\end{itemize}
+\end{frameddefn}
+
+
+\begin{framedthm}
+	\begin{itemize}
+		\item Jede monoton wachsende und nach oben beschränkte Folge konvergiert
+		\item Jede monoton fallende und nach unten beschränkte Folge konvergiert
+	\end{itemize}
+\end{framedthm}
+
+
+\begin{framedthm}
+	Jede Cauchy Folge konvergiert.
+\end{framedthm}
+
+
+\subsection{Häufungspunkte einer Folge}
+
+\begin{frameddefn}[Häufungspunkt]
+	Eine Zahl $a \in \R$ heißt Häufungspunkt einer reellen Folge, wenn es eine Teilfolge dieser Folge gibt, die gegen $a$ konvergiert.
+\end{frameddefn}
+
+
+\begin{frameddefn}[Limes superior und inferior]
+	\begin{itemize}
+		\item Sei $(a_n)_{n\geq 1}$ eine nach oben beschränkte Folge.\\ Dann heißt $\lim\limits_{n \to \infty} \sup a_n = \lim\limits_{n \to \infty} \sup \{a_k \ |\ k\geq n\}$ Limes superior.
+		\item Sei $(a_n)_{n\geq 1}$ eine nach unten beschränkte Folge.\\ Dann heißt $\lim\limits_{n \to \infty} \inf a_n = \lim\limits_{n \to \infty} \inf \{a_k \ |\ k\geq n\}$ Limes inferior.
+	\end{itemize}
+	
+\end{frameddefn}
+
+\begin{framedthm}[Größter und kleinster Häufungspunkt]
+	Der Limes Superior ist der \textit{größte} Häufungspunkt und der Limes Inferior der \textit{kleinste} Häufungspunkt.
+\end{framedthm}
+
+
+\begin{framedthm}
+	Sei $(a_n)_{n\geq 1}$ eine beschränkte Folge. Dann
+	\begin{align*}
+		(a_n)_{n\geq 1} \ \textrm{konvergent}\ \ \iff\  \lim_{n \to \infty} \sup a_n =\lim_{n \to \infty} \inf a_n \ \iff \ \exists! \ \textrm{Häufungspunkt}
+	\end{align*}
+\end{framedthm}
+
+\section{Folgen komplexer Zahlen}
+
+\subsection{Der Körper der komplexen Zahlen}
+
+\begin{framedthm}
+	$(\R \times \R, +, \cdot)$ ist ein Körper (der Körper der komplexen Zahlen).
+\end{framedthm}
+
+\begin{frameddefn}[Real- und Imaginärteil, komplexe Konjugation]
+	Sei $z = x + iy$. Dann ist $\textrm{Re}(z) = x$ und $\textrm{Im}(z) = y$ sowie $z^* = x - iy$.
+\end{frameddefn}
+
+\begin{frameddefn}[Komplexer Betrag]
+	Sei $z = x + iy$. Dann ist $|z| = \sqrt{x^2+y^2}$.
+\end{frameddefn}
+
+\begin{framedthm}[Eigenschaften des komplexen Betrags]
+	\begin{enumerate}
+		\item[(i)] $\forall z \in \C\st |z| \geq 0 \textrm{ sowie } |z| = 0 \ \iff\ z = 0$
+		\item[(ii)] $\forall z_1,z_2 \in \C\st |z_1 z_2| = |z_1| |z_2|$
+		\item[(iii)] $\forall z_1,z_2 \in \C\st |z_1 + z_2| \leq |z_1| |z_2|$
+	\end{enumerate}
+\end{framedthm}
+
+\begin{framedthm}
+	Seien $a,b \in \C$. Dann hat die Gleichung $z^2 + az + b = 0$ mindestens eine komplexe Lösung.
+\end{framedthm}
+
+\begin{framedthm}[Fundamentalsatz der Algebra]
+	Jedes Polynom $P$ mit $\textrm{grad}(P) \geq 1$ besitzt mindestens eine Nullstelle in $\C$.´
+\end{framedthm}
+
+\subsection{Konvergenz in $\C$}
+
+\begin{frameddefn}[Konvergenz einer komplexen Folge]
+	Eine Folge $(z_n)_{n\geq 1}$ komplexer Zahlen heißt \textit{konvergent gegen} $z_0 \in \C$, wenn:
+	\begin{align*}
+		\forall \varepsilon > 0\st \exists n_0 \in \N\st \forall n \geq n_0\st |z_n - z_0| < \varepsilon
+	\end{align*}
+\end{frameddefn}
+
+
+\begin{framedthm}
+	Komplexe Folge $(z_n)_{n\geq 1}$ konvergiert $\iff$ $\textrm{Re}((z_n)_{n\geq 1})$ und $\textrm{Im}((z_n)_{n\geq 1})$ konvergiert.
+\end{framedthm}
+
+\begin{frameddefn}[Komplexe Cauchy-Folge]
+	Eine komplexe Folge $(z_n)_{n\geq 1}$ wird Cauchy-Folge genannt, wenn:
+	\begin{align*}
+		\forall \varepsilon > 0\st \exists n_0 \in \N\st \forall n,m \geq n_0\st |z_n - z_m| < \varepsilon
+	\end{align*}
+\end{frameddefn}
+
+\begin{framedthm}
+	$(z_n)_{n\geq 1}$ ist Cauchy-Fole $\iff$ $\textrm{Re}((z_n)_{n\geq 1})$ und $\textrm{Im}((z_n)_{n\geq 1})$ sind Cauchy-Folgen.
+\end{framedthm}
+
+
+\begin{framedthm}[Algebraische Operationen mit komplexen Folgen]
+	Seien $(z_n)_{n\geq 1}$ und $(w_n)_{n\geq 1}$ Folgen, sodass $\lim\limits_{n \to \infty} z_n = z_0$ und $\lim\limits_{n \to \infty} w_n = w_0$.
+	\begin{enumerate}
+		\item[(i)]  $\lim\limits_{n \to \infty} z_n + w_n = z_0 + w_0$
+		\item[(ii)]  $\lim\limits_{n \to \infty} z_n \cdot w_n = z_0 \cdot w_0$
+		\item[(iii)] $w_0 \neq 0 \Rightarrow \lim\limits_{n \to \infty} \frac{z_n}{w_n} = \frac{z_0}{w_0}$ 
+	\end{enumerate}
+	
+\end{framedthm}
+
+
+\begin{frameddefn}[Beschränktheit komplexer Folgen]
+	Eine komplexe Folge $(z_n)_{n\geq 1}$ heißt \textit{echt beschränkt}, falls $\exists K \in \R_+\st \forall n \geq 1\st |z_n| < K$.
+\end{frameddefn}
+
+\begin{framedthm}[Bolzano-Weierstraß für komplexe Zahlen]
+	Sei $(z_n)_{n\geq 1}$ eine beschränkte Folge komplexer Zahlen. Dann besitzt $(z_n)_{n\geq 1}$ eine konvergente Teilfolge.
+\end{framedthm}

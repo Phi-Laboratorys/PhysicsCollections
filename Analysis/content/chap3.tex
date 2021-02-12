@@ -1,0 +1,122 @@
+\begin{frameddefn}[Reihendefinition]
+	Sei $(z_n)_{n\geq 1}$ eine Folge komplexer Zahlen. Dann heißt $s_m = \sum_{m}^{k=1} z_k$ Partialsumme von $(z_n)_{n\geq 1}$. Die Folge $(s_m)_{m\geq 1}$ heißt \textit{Reihe} mit den Gliedern $(z_n)_{n\geq 1}$ und wird mit $\sum_{\infty}^{k=1} z_k$ bezeichnet.
+\end{frameddefn}
+
+\begin{framedthm}[Geometrische Reihe]
+	Sei $q \in \C$ mit $|q| < 1$. Dann konvergiert die sogenannte \textit{geometrische Reihe} $\sum_{k=0}^{\infty} q^k = \frac{1}{1-q} \in \C$ absolut.
+\end{framedthm}
+
+\begin{framedthm}
+	Eine notwendige, aber nicht hinreichende Bedingung für die Konvergenz einer Reihe $\sum_{n=1}^{\infty} a_n$ ist, dass $a_n$ eine Nullfolge ist. Es gilt also:
+	\begin{align*}
+		\lim_{n \to \infty} a_n \neq 0 \ \Rightarrow\ \sum_{n=1}^{\infty} a_n \textrm{ divergiert}
+	\end{align*}
+\end{framedthm}
+
+\section{Konvergenz Kriterien für Reihen}
+
+\begin{framedthm}[Cauchysches Konvergenzkriterium für Reihen]
+	\begin{align*}
+		\sum_{n=1}^{\infty} z_n \textrm{ konvergiert} \ \iff\  \forall \varepsilon > 0\st\exists n_0 \in \N\st \forall n,m \geq n_0\st \biggl|\sum_{k=n}^{m} z_k \biggr| < \varepsilon
+	\end{align*}
+\end{framedthm}
+
+\begin{frameddefn}[Absolute Konvergenz]
+	Die Reihe $\sum_{k=0}^{\infty} z_n$ ist \textit{absolut konvergent}, wenn die Reihe $\sum_{k=0}^{\infty} |z_k|$ konvergiert. Jede absolute konvergente Reihe konvergiert.
+\end{frameddefn}
+
+\begin{framedthm}[Majoranten- und Minorantenkriterium] \label{majok}
+	Seien $\sum_{n=0}^{\infty} a_n$ und $\sum_{n=0}^{\infty} b_n$ zwei reelle Reihen.
+	\begin{enumerate}
+		\item[(i)] Majorantenkriterium:\\ Falls $\sum_{n=0}^{\infty} b_n$ konvergiert und $\exists N \in \N\st\forall n \geq N\st |a_n| \leq b_n$, dann konvergiert auch $\sum_{n=0}^{\infty} a_n$ absolut.
+		\item[(i)] Minorantenkriterium:\\ Wenn $\forall k \in \N\st a_k \geq 0$, $\sum_{n=0}^{\infty} b_n$ divergiert und $\exists N \in \N\st\forall n \geq N\st a_n \geq b_n \geq 0$, dann divergiert auch $\sum_{n=0}^{\infty} a_n$.
+	\end{enumerate}
+\end{framedthm}
+
+\begin{framedthm}[Leibnizsches Konvergenzkriterium]
+	Sei $(a_n)_{n\geq 1}$ eine monoton fallende reelle Folge, sodass $\forall n \geq 1\st a_n \geq 0$ und\\ $\lim\limits_{n \to \infty} a_n = 0$. Dann konvergiert die sogenannte \textit{alternierende Reihe} $\sum_{n=1}^{\infty} (-1)^n a_n$.
+\end{framedthm}
+
+\begin{framedthm}
+	Sei $(a_n)_{n\geq 1}$ eine monoton fallende reelle Folge, sodass $\forall n \geq 1\st a_n \geq 0$. Dann konvergiert die Reihe $\sum_{n=1}^{\infty} a_n \ \iff \ \sum_{k=0}^{\infty} 2^k a_{2^k}$ konvergiert.
+\end{framedthm}
+
+\section{Reihen mit komplexen Gliedern}
+
+\begin{framedthm}[Majorante- und Minorantenkriterium für komplexe Reihen]
+	Das Majoranten- bzw. Minorantenkriterium (Satz \ref{majok}) gilt auch, wenn $(a_n)_{n\geq 1}$ eine komplexe Folge ist.
+\end{framedthm}
+
+\begin{framedthm}[Cauchyscher Test]
+	Sei $\sum a_n$ eine komplexe Reihe mit $\alpha = \lim\limits_{n \to \infty} \sup |a_n|^{\frac{1}{n}}$. Dann gilt:
+	\begin{enumerate}
+		\item $\alpha < 1$: $\sum a_n$ konvergiert absolut
+		\item $\alpha > 1$: $\sum a_n$ divergiert
+		\item $\alpha = 1$: keine Aussage möglich
+	\end{enumerate}
+\end{framedthm}
+
+\begin{framedthm}[d'Alembertsches Quotientenkriterium]
+	Sei $\sum z_n$ eine komplexe Reihe mit $\alpha = \lim\limits_{n \to \infty} \bigl| \frac{a_{n+1}}{a_n}\bigr|$. Dann gilt:
+	\begin{enumerate}
+		\item $\alpha < 1$: $\sum z_n$ konvergiert absolut
+		\item $\alpha > 1$: $\sum z_n$ divergiert
+		\item $\alpha = 1$: keine Aussage möglich
+	\end{enumerate}
+\end{framedthm}
+
+\begin{frameddefn}[Potenzreihen]
+	Seien $z_0, z \in \C$ und $(c_n)_{n\geq 0}$ eine Folge komplexer Zahlen. Reihen der Gestalt\\ $\sum_{n=0}^{\infty} c_n (z-z_0)^n$ werden Potenzreihen genannt.
+\end{frameddefn}
+
+\begin{framedthm}[Cauchy-Hadamard: Konvergenz von Potenzreihen]
+	Sei $\sum_{n=0}^{\infty} c_n (z-z_0)^n$ eine Potenzreihe. Dann gilt:
+	\begin{enumerate}
+		\item[(i)] Die Potenzreihe konvergiert innerhalb des Kreises:
+		\begin{align*}
+		|z-z_0| < \frac{1}{\lim\limits_{n \to \infty} \sup |c_n|^\frac{1}{n}}
+		\end{align*}
+		\item [(ii)] Sie divergiert außerhalb des Kreises
+		\item[(iii)] Auf dem Kreisrand ist keine Aussage möglich
+	\end{enumerate}
+\end{framedthm}
+
+\section{Umgeordnete Reihen}
+
+\begin{frameddefn}[$\tau$-umgeordnete Reihe]
+	Sei $\tau\st \N \to \N$ eine bijektive Abbildung. Dann ist $\sum_{n=1}^{\infty} z_{\tau(n)}$ die $\tau$-umgeordnete Reihe.
+\end{frameddefn}
+
+\begin{framedthm}[Umordnungssatz]
+	Sei $\sum_{n=1}^{\infty} z_n$ eine komplexe, absolut konvergente Reihe. Dann konvergiert auch jede Umordnung dieser Reihe gegen denselben Grenzwert.
+\end{framedthm}
+
+\begin{framedthm}[Riemannscher Umordnungssatz]
+	Sei $\sum_{n=1}^{\infty} a_n$ eine konvergente, aber \textbf{nicht} absolut konvergente Reihe reeller Zahlen. Dann gilt:
+	\begin{enumerate}
+		\item[(i)] Sei $c \in \R$ beliebig. Dann $\exists \tau\st \N \to \N$ bijektive Abbildung, sodass $\sum_{n=1}^{\infty} a_{\tau(n)} = c$
+		\item[(ii)] $\exists \tau_{+}\st \N \to \N, \tau_{-}\st \N \to \N$ bijektive Abbildungen, sodass $\sum_{n=1}^{\infty} a_{\tau_{+}(n)} = +\infty$ und $\sum_{n=1}^{\infty} a_{\tau_{-}(n)} = -\infty$
+	\end{enumerate}
+\end{framedthm}
+
+\begin{framedthm}[Cauchy-Produkt von Reihen]
+	Seien $\sum_{n=0}^{\infty} z_n$ und $\sum_{n=0}^{\infty} w_n$ absolut konvergente Reihen. Für $n\geq 0$ mit wird definiert: \[c_n = \sum_{n=0}^{n} z_{n-k} w_k\]
+	Dann ist \[\sum_{n=0}^{\infty} c_n = (\sum_{n=0}^{\infty} z_n)(\sum_{n=0}^{\infty} w_n)\] absolut konvergent.
+\end{framedthm}
+
+\begin{framedthm}[Eulersche Zahl]
+	Es gilt:
+	\[\lim_{n \to \infty} \left(1+ \frac{1}{n}\right)^n = e\]
+	sowie $e \in \R \setminus \Q$.
+\end{framedthm}
+
+\begin{framedthm}[Eigenschaften der Exponentialfunktion]
+	Es gilt:
+	\[\exp(z) = \sum_{n=0}^{\infty} \frac{z^n}{n!}\]
+	sowie:
+	\[\exp(z_1+z_2) = \exp(z_1)\cdot\exp(z_2)\]
+\end{framedthm}
+
+\begin{framedthm}[Eulersche Formel]
+	\[\forall z \in \C\st \exp(iz) = \cos(z) + i \sin(z)\]
+\end{framedthm}

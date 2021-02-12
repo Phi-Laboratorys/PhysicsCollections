@@ -1,0 +1,225 @@
+
+	Eine Menge $\R$ wird als Menge der reellen Zahlen bezeichnet, wenn die folgenden Bedingungen erfüllt sind:
+	
+	\begin{enumerate}
+		
+		\item[I] Axiom der Addition:\\
+		$+\st \R \times \R \to \R$ definiert als $(x, y) \mapsto x+y$
+		\begin{enumerate}
+			\item [$1_+$] Es existiert ein neutrales Element $0$ mit $\forall x \in \R\st x + 0 = 0 + x = x$
+			\item [$2_+$] Zu jedem $x \in \R$ existiert ein $-x \in \R$ sodass $x + (-x) = (-x) + x = 0$
+			\item [$3_+$] Die Operation $+$ ist assoziativ, d.h. $\forall x,y,z \in \R\st x+(y+z) = (x+y)+z$
+			\item [$4_+$] Die Operation $+$ ist kommutativ, d.h. $\forall x,y \ \R\st x + y = y + x$
+		\end{enumerate}
+	
+		\item [II] Axiom der Multiplikation:\\
+		$\cdot\st \R \times \R \to \R$ definiert als $(x,y) \mapsto x\cdot y$
+		\begin{enumerate}
+			\item [$1_\cdot$] Es existiert ein neutrales Element $1\neq 0$ sodass $\forall x \in \R\st x\cdot 1 = 1 \cdot x = x$
+			\item [$2_\cdot$] $\forall x \in \R \setminus \{0\}$ existiert ein $x^{-1} \in \R$ (das Inverse von x) sodass \newline $\forall x \in \R\st x \cdot x^{-1} = x ^ {-1} \cdot x = 1$
+			\item [$3_\cdot$] Die Operation $\cdot$ ist assoziativ, d.h. $\forall x,y,z \in \R\st x\cdot (y\cdot z) = (x\cdot y) \cdot z$
+			\item [$4_\cdot$] Die Operation $\cdot$ ist kommutatic, d.h. $\forall x,y \in \R\st x\cdot y = y\cdot x$
+		\end{enumerate}
+	
+		\item[ ] Zusätzlich: Distributivität $\forall x,y,z \in \R\st (x+y) \cdot z = x\cdot z + y\cdot z$
+		
+		\item [III] Anordnungsaxiom:\\
+		Zwischen den Elementen in $\R$ existiert eine Relation $\leq$ mit folgenden Bedingungen:
+		\begin{enumerate}
+			\item [$0_\leq$] $\forall x \in \R\st x \leq x$
+			\item [$1_\leq$] $\forall x,y \in \R\st x \leq y \land y \leq x \Rightarrow x = y$
+			\item [$2_\leq$] $\forall x,y,z \in \R\st x \leq y \land y \leq z \Rightarrow x \leq z$
+			\item [$3_\leq$] $\forall x,y \in \R\st x \leq y \lor y \leq x$
+		\end{enumerate}
+	
+		\item [IV] Vollständigkeitsaxiom:\\
+		Seien $X,Y$ Mengen, sodass $X \neq \emptyset$, $Y \neq \emptyset$ sowie $X \subseteq \R$, $Y \subseteq \R$ und $\forall x \in X, y \in Y\st x \leq y$. Dann gilt $\exists c \in \R\st \forall x \in X, y \in Y\st x \leq c \leq y$
+	
+	\end{enumerate}
+
+
+\section{Algebraische Eigenschaften der reellen Zahlen}
+
+\begin{enumerate}
+	\item[(a)] Folgerungen aus dem Additionsaxiom
+	
+	\begin{enumerate}
+		\item[1.] Es gibt nur ein additives neutrales Element $0 \in \R$
+		\item[2.] Jedes $x \in \R$ besitzt ein \textit{eindeutiges} Negatives
+		\item[3.] In $\R$ besitzt die Gleichung $a+x = b$ die \textit{eindeutige} Lösung $x= b-a$
+	\end{enumerate}
+	
+	\item[(b)] Folgerungen aus dem Multiplikationsaxiom
+	
+	\begin{enumerate}
+		\item[1.] Es gibt nur ein multiplikates neutrales Element $1 \in \R$
+		\item[2.] Zu jedem $x \neq 0$ gibt es nur ein Inverses $x^{-1}$
+		\item[3.] Für $a \neq 0$ besitzt die Gleichung $x \cdot a = b$ die eindeutige Lösung $x = b \cdot a^{-1}$
+	\end{enumerate}
+	
+	\item[(c)] Folgerungen aus den Axiomen I und II
+	
+	\begin{enumerate}
+		\item[1.] $\forall x \in \R\st x\cdot 0 = 0 \cdot x = 0$
+		\item[2.] $\forall x,y \in \R\st \, x\cdot y = 0 \,\Rightarrow\, x = 0 \lor y = 0$
+		\item[3.] $\forall x \in \R\st (-1)\cdot x = -x$
+		\item[4.] $\forall x \in \R\st (-x)\cdot (-x) = x\cdot x$
+	\end{enumerate}
+	
+	\item[(d)] Folgerungen aus dem Anordnungsaxiom
+	
+	\begin{enumerate}
+		\item[1.] $\forall x,y \in \R$ gilt \textit{genau} eine der Relationen $x<y$, $x=y$, $x>y$
+		\item[2.] $\forall x,y,z \in \R\st x<y \land y \leq z \,\Rightarrow\, x < z$
+	\end{enumerate}
+	
+	\item[(e)] Folgerungen aus den Axiomen I und II sowie II und III
+	
+	\begin{enumerate}
+		\item[1.] $\forall x,y,z,w \in \R\st$
+		\begin{itemize}
+			\item $x<y \Rightarrow x+z < y+z$
+			\item $x>0 \Rightarrow -x < 0$
+			\item $x\leq y \land z \leq w \Rightarrow x+z \leq y+w$
+		\end{itemize}
+		\item[2.] $\forall x,y,z \in \R\st$
+		\begin{itemize}
+			\item $x > 0 \land y > 0 \Rightarrow x\cdot y > 0$
+			\item $x < 0 \land y > 0 \Rightarrow x\cdot y < 0$
+			\item $x < 0 \land y < 0 \Rightarrow x\cdot y > 0$
+			\item $x < y \land z > 0 \Rightarrow x\cdot z < y \cdot z$
+			\item $x < y \land z < 0 \Rightarrow x\cdot z > y \cdot z$
+		\end{itemize}
+		\item[3.] $0<1$
+		\item[4.] $\forall x \in \R\st x > 0 \Rightarrow x^{-1} >0$
+	\end{enumerate}
+\end{enumerate}
+
+\section{Die Existenz einer kleinsten oberen oder größten unteren Schranke}
+
+\begin{frameddefn}[Obere und untere Schranken]
+	\begin{enumerate}
+		\item [(i)] Eine Menge $X \subset \R$ heißt von \textit{oben beschränkt}, falls eine Zahl $c \in \R$ existiert, sodass $\forall x \in X\st x \leq c$. $c$ ist dann eine obere Schranke.
+		\item [(ii)] Eine Menge $X \subset \R$ heißt von \textit{unten beschränkt}, falls eine Zahl $c \in \R$ existiert, sodass $\forall x \in X\st c \leq x$. $c$ ist dann eine untere Schranke.
+		\item [(iii)] Eine Menge die von \textit{oben und unten} beschränkt ist, heißt \textit{beschränkt}.
+	\end{enumerate}
+\end{frameddefn}
+
+\begin{frameddefn}[Maximales und minimales Element]
+	\begin{enumerate}
+		\item [(i)] Ein Element $a \in X$ wird maximales Element von X genannt, falls $a$ eine obere Schranke ist\\
+		$a = \max (X)$
+		\item [(ii)] Ein Element $b \in X$ wird minimales Element von X genannt, falls $b$ eine untere Schranke ist\\
+		$b = \min (X)$
+	\end{enumerate}
+\end{frameddefn}
+
+\begin{framedquest}
+	Das maximale bzw. minimale Element sind immer eindeutig, müssen aber nicht zwangsweise existieren.
+\end{framedquest}
+
+\begin{frameddefn}
+	\begin{enumerate}
+		\item [(i)] Sei $X \subset \R$ eine von oben beschränkte Menge. Die kleinste Zahl, die eine obere Schranke für $X$ ist, heißt \textit{Supremum} von $X$ ($\sup X$). Es gilt:
+		\begin{itemize}
+			\item $\forall x \in X\st x \leq \sup X$
+			\item $\forall M < \sup X\st \exists x \in X\st M < x$
+		\end{itemize}
+		\item [(ii)] Sei $X \subset \R$ eine von unten beschränkte Menge. Die größte Zahl, die eine untere Schranke für $X$ ist, heißt \textit{Infimum} von $X$ ($\inf X$).
+		\begin{itemize}
+			\item $\forall x \in X\st x \geq \inf X$
+			\item $\forall M > \inf X\st \exists x \in X\st M > x$
+		\end{itemize}
+	\end{enumerate}
+\end{frameddefn}
+
+
+\begin{framedthm} [$\exists \sup X$]
+	Jede nicht leere Menge $X \subset \R$, die von oben beschränkt ist, besitzt eine eindeutige kleinste obere Schranke.\\
+	\textbf{Wichtig:} Nicht für $\Q$ gültig.
+\end{framedthm}
+
+\section{Die wichtigsten Klassen reeller Zahlen}
+\subsection{Die natürlichen Zahlen}
+\vspace{5pt}
+\begin{frameddefn}
+	Eine Menge $X \subset \R$ heißt \textit{induktiv}, wenn mit jedem $x \in X$ auch $x+1 \in X$
+\end{frameddefn}
+
+\begin{frameddefn}
+	Die Menge der natürlichen Zahlen ist die \textit{kleinste} induktive Menge, die die $1$ enthält und wird mit $\N$ bezeichnet.
+\end{frameddefn}
+
+\subsection{Die ganzen Zahlen}
+
+\begin{frameddefn}
+	$\Z = \{-n \ |\  n \in \N\} \cup \N \cup \{0\}$
+\end{frameddefn}
+
+\subsection{Die rationalen Zahlen}
+\vspace{5pt}
+\begin{frameddefn}
+	$\Q = \{ \frac{p}{q} \ |\  p,q \in \Z\}$
+\end{frameddefn}
+
+\subsection{Die reellen Zahlen}
+Alle reelle Zahlen, die nicht rational sind, werden irrational genannt.
+
+\subsection{Weitere Sätze und Definitionen}
+\vspace{5pt}
+\begin{framedthm}
+	Für jede natürliche Zahl gilt:
+	\begin{align*}
+		\sum_{k=1}^{n} k = \frac{n(n+1)}{2}
+	\end{align*}
+\end{framedthm}
+
+\begin{frameddefn}[Binomial Koeffizient]
+\begin{align*}
+	\forall n \geq k \geq 0\st {n\choose k} = \frac{n!}{k! (n-k)!} = {n\choose n-k}
+\end{align*}
+\end{frameddefn}
+
+\begin{framedthm}[Binomischer Lehrsatz]
+	Seien $x,y \in \R$ und $n \in \N$. Es gilt:
+	\begin{align*}
+		(x+y)^n = \sum_{k=0}^{n} {n\choose k} x^k y^{n-k}
+	\end{align*}
+\end{framedthm}
+
+
+\begin{framedthm}[Bernoullische Ungleichung]
+	Sei $x\in \R$ mit $x > -1$. Es gilt:
+	\begin{align*}
+		\forall n \in \N: (1 + x)^n \geq 1 + nx
+	\end{align*}
+\end{framedthm}
+
+\section{Das Archimedische Prinzip}
+
+
+\begin{framedthm}[Archimedisches Axiom]
+	Zu jeder festen positiven Zahl $x$ und jeder reellen Zahl $y$ gibt es ein $n_0 \in \N$ sodass $n_0 x > y$
+\end{framedthm}
+
+\begin{frameddefn}[Absolutbetrag]
+	Für eine reelle Zahl $x$ wird der Betrag definiert durch:
+	\begin{align*}
+		x = \biggl\{\begin{array}{ll}
+			x, \ \ \ \textrm{falls}\  x \geq 0 \\
+			-x, \  \textrm{falls}\  x < 0
+		\end{array}
+	\end{align*}
+\end{frameddefn}
+
+\begin{framedthm}
+	Die Funktion $|\cdot|$ hat folgende Eigenschaften:
+	\begin{enumerate}
+		\item[(i)] $\forall x \in \R\st |x| \geq 0$ sowie $|x| = 0 \iff x = 0$
+		\item [(ii)] (Multiplikativität) $\forall x,y \in \R\st |x|\cdot|y| = |x\cdot y|$
+		\item[(iii)] (Dreiecksungleichung) $\forall x,y \in \R\st |x+y| \leq |x| + |y|$
+		\item[(iv)] (umgekerte Dreiecksungleichung) $\forall x,y \in \R\st \big||x| - |y|\big| \leq |x \pm y| \leq |x| + |y|$
+	\end{enumerate}
+\end{framedthm}
+
+

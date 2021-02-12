@@ -1,0 +1,315 @@
+\section{Bezeichnungen und Definitionen}
+
+Im Folgenden wird mit $\K$ ($\R$ oder $\C$) der zu betrachtente Körper bezeichnet. Sei $M \subset \K$ der Definitionsbereich. Eine Funktion $f\st M \to \K$ ordnet jedem Element $x \in M$ ein Element $y \in \K$ zu ($f(x) = y$).\\
+Die Menge $f(M) = \{y\in \K \ |\ \exists x \in M\st f(x)=y\}$ wird als Wertemenge order auch Bild der Funktion f bezeichnet. Allgemeiner heißt $f(A) = \{y\in \K \ |\ \exists a \in A\st f(a)=y\}$, wenn $A \subset M$, das Bild von A unter f.\\
+Dabei bezeichnet $f_{|A}\st A \to \K$ mit $f_{|A}(a) = f(a)$ die Restriktion von f. 
+
+\begin{frameddefn}[Operationen mit Funktionen]
+	Seien $f,g\st M \to \K$.
+	\begin{enumerate}
+		\item[(i)] $(f+g)(x) = f(x) + g(x)$
+		\item[(ii)] $(f\cdot g)(x) = f(x) \cdot g(x)$
+		\item[(iii)] $(\lambda \cdot f)(x) = \lambda\cdot f(x)$ wobei $\lambda \in \K$
+		\item[(iv)] $\frac{f}{g}\st M\setminus\{z \in M\ |\ g(z)=0\} \to \K$ mit $\left(\frac{f}{g}\right)(x)= \frac{f(x)}{g(x)}$
+	\end{enumerate}
+\end{frameddefn}
+
+\begin{frameddefn}[Komposition von Funktionen]
+	Sei $f\st M \to \K$ und $g\st E \to \K$ sodass $f(M) \subset E$. Dann bezeichnet $(g \circ f)\st M \to \K$ mit $(g \circ f)(x)=g(f(x))$ die Komposition der Funktionen $f$ und $g$.
+\end{frameddefn}
+
+\newpage
+\section{Stetigkeit von Funktionen}
+
+\begin{frameddefn}[Stetigkeit einer Funktion]
+	Sei $D \subset \K$ und $f\st D \to \K$ sowie $z_0 \in D$.
+	\begin{align*}
+		f \textrm{ stetig in } z_0 \ \iff \ \forall \varepsilon > 0\st \exists \delta > 0\st \forall z \in D\st |z-z_0| < \delta \ \Rightarrow\ |f(z)-f(z_0)| < \varepsilon
+	\end{align*}
+	$f$ heißt stetig, wenn $f$ in jedem $z_0 \in D$ stetig ist. 
+\end{frameddefn}
+
+\begin{framedthm}[Folgenkriterium]
+	Sei $f\st D \to \K$ und $z_0 \in D$.
+	\begin{align*}
+		f \textrm{ stetig in } z_0 \ \iff \ \forall (z_n)_{n\geq 1} \subset D\st \lim_{n \to \infty} z_n = z_0 \ \Rightarrow\ \lim_{n \to \infty} f(z_n) = f(z_0)
+	\end{align*}
+\end{framedthm}
+
+\begin{framedthm}[Rationale Operationen auf stetigen Funktionen]
+	Seien $f,g\st D \to \K$ mit $D \subset \K$ beliebig. Wenn $f,g$ in $z_0 \in D$ stetig sind, dann gilt:
+	\begin{enumerate}
+		\item[(i)] $f+g$ ist stetig in $z_0$
+		\item[(ii)] $f\cdot g$ ist stetig in $z_0$
+		\item[(iii)] $\lambda\cdot f$ ist stetig in $z_0$
+		\item[(iv)] falls $g(z_0) \neq 0$ gilt $\frac{f}{g}$ ist stetig in $z_0$
+	\end{enumerate}
+\end{framedthm}
+
+\begin{framedthm}[Komposition von stetigen Funktionen]
+	Sei $f\st D \to \K$ und $g\st E \to \K$ sodass $f(D) \subset E$. Sei außerdem $f$ in $z_0 \in D$ stetig, sowie $g$ in $w_0 = f(z_0) \in E$ stetig. Dann ist die Funktion $g \circ f$ in $z_0$ stetig.
+\end{framedthm}
+
+\section{Grenzwerte von Funktionen}
+
+\begin{frameddefn}[Häufungspunkte einer Menge]
+	Sei $M \subset \K$ eine beliebige Menge. Ein Punkt $p \in \K$ ist ein Häufungspunkt der Menge M, wenn $\forall \varepsilon > 0$ die Menge $\{z \in \K\ |\ |z-p| < \varepsilon\}$ eine unendliche Teilmenge von M enthält.
+\end{frameddefn}
+
+\begin{frameddefn}[Grenzwert einer Funktion]
+	Sei $f\st D \to \K$ und $z_0 \in \K$ ein Häufungspunkt von $D$. Dann ist $A \in \K$ der Grenzwert von $f$, wenn $z$ gegen $z_0$ strebt, falls gilt:
+	\begin{align*}
+		\forall \varepsilon > 0\st \exists \delta > 0\st \forall z \in D\st 0 < |z-z_0| < \delta \ \Rightarrow\ |f(z) - A| < \varepsilon
+	\end{align*}
+	\begin{align*}
+		\lim_{z \to z_0} f(z) = A
+	\end{align*}
+\end{frameddefn}
+
+
+\begin{framedthm}
+	$\lim\limits_{z \to z_0} f(z) = A$ gilt genau dann, wenn für jede Folge $(z_n)_{n\geq 1}$ von Element aus $D\setminus\{z_0\}$ die gegen $z_0$ konvergieren, die Folge $(f(z_n))_{n\geq 1}$ gegen $A$ konvergiert.
+\end{framedthm}
+
+\begin{frameddefn}[Beschränkheit einer Funktion]
+	Sei $f\st D \to \K$.
+	\begin{align*}
+		f \textrm{ ist beschränkt} \ \iff\ \exists M > 0\st \forall z \in D\st |f(x)| \leq M
+	\end{align*}
+	Ist $f$ beschränkt, wird
+	\begin{align*}
+		||f||_{C^o} = \sup\{|f(z)|\ \big|\ z \in D)\}
+	\end{align*}
+	als Supremumsnorm von f.
+\end{frameddefn}
+
+\begin{framedthm}[Eigenschaften der Supremumsnorm]
+	Seien $f,g$ beschränkte Funktionen. Dann gilt:
+	\begin{enumerate}
+		\item[(i)] $||f||_{C^o} = 0 \ \iff\ f = 0$
+		\item[(ii)] $||\lambda\cdot f||_{C^o} = |\lambda|||f||_{C^o}$
+		\item[(iii)] $||f+g||_{C^o} \leq ||f||_{C^o} + ||g||_{C^o}$
+	\end{enumerate}
+\end{framedthm}
+
+\begin{frameddefn}[Konvergent normale Reihen]
+	Eine Reihe $\sum_{n=1}^{\infty} f_n$ von Funktionen $f_n\st D \to \K$ heißt \textit{konvergent normal} genau dann, wenn $\forall n \geq 1\st f_n$ beschränkt ist und $\sum_{n=1}^{\infty}||f_n||_{C^o}$ konvergent.
+\end{frameddefn}
+
+\begin{framedthm}
+	Sei $\sum_{n=0}^{\infty}f_n$ konvergent normal. Für $z \in D$ setze $f(z) = \sum_{n=0}^{\infty}f_n$. Dann ist die Funktion $f\st D \to \K$ stetig.
+\end{framedthm}
+
+\begin{framedquest}[Potenzreihen sind konvergent normal]
+	Sei $\sum_{n=0}^{\infty} a_n (z-z_0)^n$ eine Potenzreihe mit Konvergenzradius $|z-z_0| < R$. Dann ist die Potenzreihe im Konvergenzradius konvergent normal.
+\end{framedquest}
+
+\section{Globale Eigenschaften stetiger Funktionen}
+
+\begin{framedthm}[Zwischenwertsatz von Bolzano-Cauchy]
+	Sei $f\st[a,b] \to \R$ eine stetige Funktion mit $f(a)\cdot f(b) < 0$. Dann $\exists p \in\  ]a,b[\st f(p)=0$.
+\end{framedthm}
+
+
+\begin{framedthm}
+	Sei $f:[a,b] \to \R$ stetig. Dann ist $f$ beschränkt und\\
+	$\exists x_m, x_M \in [a,b]\st f(x_m) = \inf\{f(x)\ |\ x \in [a,b]\}$ sowie $f(x_M) = \sup\{f(x)\ |\ x \in [a,b]\}$.
+\end{framedthm}
+
+
+\begin{frameddefn}[Gleichmäßig stetig]
+	Eine Funktion $f: I \to \R$ heißt in I \textit{gleichmäßig stetig} wenn gilt:
+	\begin{align*}
+		\forall \varepsilon > 0\st \exists \delta > 0\st \forall x_1, x_2 \in I: |x_1 - x_2| < \delta \ \Rightarrow\ |f(x_1) - f(x_2)| < \varepsilon
+	\end{align*}
+\end{frameddefn}
+
+
+\begin{framedthm}
+	Jede auf einem Intervall $[a,b]$ mit $a,b \in \R$ stetige Funktion $f\st [a,b] \to \R$ ist gleichmäßig stetig.
+\end{framedthm}
+
+
+\begin{frameddefn}
+	Sei $f\st]a,\infty[\to\R$, dann gilt:
+	\begin{enumerate}
+		\item[(i)] $\lim\limits_{x \to \infty} f(x) = \alpha \in \R \ \iff\ \forall \varepsilon>0\st \exists N \in \R\st \forall x > \max(a,N)\st |f(x-\alpha)| < \varepsilon$
+		\item[(ii)] $\lim\limits_{x \to \infty} f(x) = \infty \ \iff\ \forall M>0\st \exists K \in \R\st \forall x > K\st f(x) > M$
+		\item[(iii)] $\lim\limits_{x \to \infty} f(x) = -\infty \ \iff\ \forall M>0\st \exists K \in \R\st \forall x > K\st f(x) < M$
+	\end{enumerate}
+	Für $\lim\limits_{x \to \infty} f(x)$ ähnlich.
+\end{frameddefn}
+
+
+\begin{frameddefn}[Monotone Funktionen]
+	Sei $M \subset \R$ eine Menge, $f\st M \to \R$ eine Funktion. Dann heißt f:
+	\begin{itemize}
+		\item \textit{monoton wachsend} wenn $\forall x_1, x_2 \in M\st x_1 < x_2 \Rightarrow f(x_1) \leq f(x_2)$
+		\item \textit{streng monoton wachsend} wenn $\forall x_1, x_2 \in M\st x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$
+		\item \textit{monoton fallend} wenn $\forall x_1, x_2 \in M\st x_1 < x_2 \Rightarrow f(x_1) \geq f(x_2)$
+		\item \textit{monoton wachsend} wenn $\forall x_1, x_2 \in M\st x_1 < x_2 \Rightarrow f(x_1) > f(x_2)$
+	\end{itemize}
+\end{frameddefn}
+
+\begin{framedthm}
+	Sei $f\st [a,b] \to \R$ eine stetige Funktion. Dann ist $f$ genau dann injektiv wenn $f$ streng monoton ist.
+\end{framedthm}
+
+\begin{frameddefn}[Umkehrabbildung]
+	Seien $M_1, M_2 \subset \R$ und $f\st M_1 \to M_2$ bijektiv. Dann ist $g\st M_2 \to M_1$ genau dann die Umkehrabbildung (Inverse, $g=f^{-1}$), wenn $\forall y \in M_2\st (f \circ g)(y) = y$ und\\ $\forall x \in M_1\st (g \circ f)(x) = x$.
+\end{frameddefn}
+
+\begin{framedthm}
+	Sei $f\st [a,b] \to \R$ eine stetige, streng monotone Funktion. Dann ist $f([a,b]) = J \subset \R$ bijektiv und $f^{-1}\st J \to [a,b]$ ist auch stetig und monoton.
+\end{framedthm}
+
+\section{Landau Symbole}
+
+\begin{frameddefn}[Klein \textit{o} und groß $\mathcal{O}$]
+	Sei $f,g \st ]a,\infty[ \to \R$.
+	\begin{itemize}
+		\item $f(x) = \textit{o}(g(x))$ für $x \to \infty$ wenn\\ $\forall \varepsilon > 0 \st \exists R > 0\st \forall x > \max(R,a)\st |f(x)| < \varepsilon |g(x)|$
+		\item $f(x) = \mathcal{O}(g(x))$ für $x \to \infty$ wenn\\ $\exists c > 0 \st \exists R \in \R \st \forall x > R\st |f(x)| \leq c |g(x)|$
+	\end{itemize}
+	Sei $f,g \st I \to \R$ mit $I \subset \R$. Dann ist:
+	\begin{itemize}
+		\item $f(x) = \textit{o}(g(x)))$ für $x \to x_0$ wenn \\
+		$\forall \varepsilon > 0 \st \exists \delta > 0 \st \forall x \in I \ \cap\  ]x_0 - \delta, x_0 + \delta[\st |f(x)| < \varepsilon |g(x)|$
+		\item $f(x) = \mathcal{O}(g(x)))$ für $x \to x_0$ wenn \\
+		$\exists c > 0 \st \exists \delta > 0 \st \forall x \in I \ \cap\  ]x_0 - \delta, x_0 + \delta[\st |f(x)| < c |g(x)|$
+	\end{itemize}
+\end{frameddefn}
+
+\section{Logarithmus}
+
+\begin{framedthm}
+	Die Exponentialfunktion $\exp \st \R \to \R$ ist stetig, streng monoton wachsend und\\ $\exp(\R) =\  ]0,\infty[$.\\Die Umkehrfunktion heißt (natürlicher) Logarithmus $\log\st ]0,\infty[\, \to \R$.
+\end{framedthm}
+
+\begin{framedthm}[Eigenschaften des Logarithmus]
+	\begin{itemize}
+		\item $\forall x,y \in\  ]0,\infty[\st \log(xy) = \log(x) + \log(y)$
+		\item $\log(1) = 0$
+		\item $\log(x) > 0 \ \iff\ x > 1$
+	\end{itemize}
+\end{framedthm}
+
+\begin{frameddefn}[Potenzen einer positiv reellen Zahl]
+	Sei $a \in\  ]0,\infty[$, $z \in \C$. Dann ist $a^z = \exp(z \log(a))$.
+\end{frameddefn}
+
+\begin{framedthm}
+	Die Funktion $f(x) = a^x$, $f\st \R \to\, ]0,\infty[$ ist stetig und:
+	\begin{itemize}
+		\item $\forall x,y \in \R\st a^{x+y} = a^x a^y$
+		\item $\forall n \in \N\st a^{\frac{1}{n}} = \sqrt[n]{a}$
+		\item $\forall x,y \in \R\st (a^x)^y = a^{xy}$
+	\end{itemize}
+\end{framedthm}
+
+\begin{framedthm}
+	Sei $f\st \R \to \R$ eine stetige reelle Funktion mit $\forall x,y \in \R\st f(x+y) = f(x) f(y)$.
+	Dann ist f entweder $f(x) = a^x$ mit $a \in \R_+$ oder $\forall x \in \R\st f(x) = 0$.
+\end{framedthm}
+
+\begin{framedquest}[Grenzwerte der Logarithmus Funktion]
+	\begin{enumerate}
+		\item [(i)] $\lim\limits_{x \to 0} \log x = - \infty$ wobei $x > 0$
+		\item [(ii)] $\lim\limits_{x \to \infty} \log x = \infty$
+		\item [(iii)] Sei $\alpha \in \R_+$ dann $\lim\limits_{x \to 0} x^{\alpha} = 0$ wobei $x > 0$
+		\item [(iv)] $\lim\limits_{x \to \infty} \frac{\log x}{x^{\alpha}} = 0$
+	\end{enumerate}
+\end{framedquest}
+
+\newpage
+\section{Trigonometrische Funktionen}
+
+\begin{frameddefn}[Sinus und Kosinus]
+	Da für $z \in \C$ $\exp(iz) = \cos(z) + i \sin(z)$ gilt:
+	\[
+	\cos(z) = \sum_{k=0}^{\infty} = \frac{(-1)^k}{(2k)!} z^{2k} = \frac{\exp(iz)+\exp(-iz)}{2}
+	\]
+	\[
+	\sin(z) = \sum_{k=0}^{\infty} = \frac{(-1)^k}{(2k + 1)!} z^{2k + 1} = \frac{\exp(iz)-\exp(-iz)}{2i}
+	\]
+	sowie $\cos(-z) = \cos(z)$ und $\sin(-z) = -\sin(z)$.
+\end{frameddefn}
+
+\begin{framedthm}[Additionstheoreme]
+	Sei $z_1,z_2 \in \C$.
+	\[
+	\cos(z_1 + z_2) = \cos(z_1)\cos(z_2) - \sin(z_1)\sin(z_2)
+	\]
+	\[
+	\sin(z_1 + z_2) = \sin(z_1)\cos(z_2) - \sin(z_2)\cos(z_1)
+	\]
+\end{framedthm}
+
+\begin{framedthm}[Analytische Eigenschaften von Sinus und Cosinus]
+	\begin{enumerate}
+		\item [(i)] $\sin$ und $\cos$ sind auf $\C$ stetig
+		\item [(ii)] $\forall x \in \R\st \sin^2 x + \cos^2 x = 1$
+		\item [(iii)] $r_{2n+2}$ und $r_{2n+3}$ bezeichnen die Restglieder von Cosinus und Sinus, also 
+		\[
+		\cos(z) = \sum_{k=0}^{n} = \frac{(-1)^k}{(2k)!} x^{2k} + r_{2n+2}(x)
+		\]
+		\[
+		\sin(z) = \sum_{k=0}^{n} = \frac{(-1)^k}{(2k + 1)!} x^{2k + 1} + r_{2n+3}(x)
+		\]
+		Es gilt:
+		\[
+		\forall |x| < 2n+3\st |r_{2n+2}| \leq \frac{|x|^{2n+2}}{(2n+2)!}
+		\]
+		\[
+		\forall |x| < 2n+4\st |r_{2n+3}| \leq \frac{|x|^{2n+3}}{(2n+3)!}
+		\]
+	\end{enumerate}
+\end{framedthm}
+
+\begin{framedthm}[Nullstelle des Cosinus]
+	$\cos\st [0,2] \to \R$ hat genau eine Nullstelle, nämlich $\frac{\pi}{2}$.
+\end{framedthm}
+
+\begin{framedthm}[Folgerungen aus den Additionstheoremen]
+	\begin{itemize}
+		\item $\sin x_1 + \sin x_2 = 2 \sin(\frac{x_1 + x_2}{2}) \cos(\frac{x_1 - x_2}{2})$
+		\item $\sin x_1 - \sin x_2 = 2 \cos(\frac{x_1 + x_2}{2}) \sin(\frac{x_1 - x_2}{2})$
+		\item $\cos x_1 + \cos x_2 = 2 \cos(\frac{x_1 + x_2}{2}) \cos(\frac{x_1 - x_2}{2})$
+		\item $\cos x_1 - \cos x_2 = -2 \sin(\frac{x_1 + x_2}{2}) \sin(\frac{x_1 - x_2}{2})$
+	\end{itemize}
+\end{framedthm}
+
+\begin{framedquest}[Folgerungen der Nullstelle des Cosinus]
+	\begin{itemize}
+		\item $\exp(i\frac{\pi}{2}) = i$
+		\item $\exp(i\pi) = -1$
+		\item $\forall z \in \C\st \exp(z + 2\pi k i) = \exp(z)$ wenn $k \in \Z$. Gilt auch für $\sin$ und $\cos$
+		\item $\sin(\frac{\pi}{2} - z) = \cos(z)$ sowie $\cos(\frac{\pi}{2} - z) = \sin(z)$
+		\item $\cos(z) = 0 \ \iff\ z \in \{k\pi + \frac{\pi}{2} \ |\ k \in \Z\}$\\ $\sin(z) = 0 \ \iff\ z \in \{k\pi \ |\ k \in \Z\}$
+	\end{itemize}
+\end{framedquest}
+
+\begin{framedthm}[Umkehrfunktion von Sinus und Cosinus]
+	\begin{enumerate}
+		\item[(i)] Die Funktion $\cos\st [0,\pi] \to [-1,1]$ ist streng monoton fallend und bildet das Intervall $[0,\pi]$ bijektiv auf $[-1,1]$ ab. Die Umkehrfunktion ist \\$\arccos\st [-1,1] \to [0,\pi]$
+		\item[(ii)] Die Funktion $\sin\st [-\frac{\pi}{2},\frac{\pi}{2}] \to [-1,1]$ ist streng monoton wachsend und bildet das Intervall $[-\frac{\pi}{2},\frac{\pi}{2}]$ bijektiv auf $[-1,1]$ ab. Die Umkehrfunktion ist \\$\arcsin\st [-1,1] \to [-\frac{\pi}{2},\frac{\pi}{2}]]$
+	\end{enumerate}
+\end{framedthm}
+
+\begin{framedquest}[Gültigkeitsbereich der Umkehrfunktion]
+	Es gilt $\forall x \in [-1,1]\st \cos(\arccos(x)) = x$ und $\forall x \in [0,\pi]\st \arccos(\cos(x)) = x$.
+\end{framedquest}
+
+\begin{frameddefn}[Tangens]
+	\begin{enumerate}
+		\item [(i)] $\tan \st \C \setminus \{k\pi + \frac{\pi}{2} \ |\ k \in \Z\} \to \C$ definiert durch 
+		\[
+		\tan z = \frac{\sin z}{\cos z}
+		\]
+		$\tan\st ]-\frac{\pi}{2}, \frac{\pi}{2}[ \,\to \R$ ist streng monoton wachsend. Damit ist die Umkehrfunktion $\arctan\st \R \to\, ]-\frac{\pi}{2}, \frac{\pi}{2}[$.
+		\item [(ii)] $\cot \st \C \setminus \{k\pi \ |\ k \in \Z\} \to \C$ definiert durch
+		\[
+		\cot z = \frac{\cos z}{\sin z}
+		\]
+	\end{enumerate}
+\end{frameddefn}

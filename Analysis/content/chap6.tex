@@ -1,0 +1,127 @@
+\section{Allgemeine Eigenschaften integrierbarer\\ Funktionen}
+
+\begin{frameddefn}[Treppenfunktion]
+	Sei $a < b$, $a,b \in \R$ und $\phi\st [a,b] \to \R$. $\phi$ heißt Treppenfunktion, wenn es eine Unterteilung des Intervalls $[a,b]$ mit $a= x_0 < x_1 < x_2 < ... < x_n = b$ gibt und $c_1,...,c_n \in \R$ existieren, sodass $\phi_{|]x_{k-1}, x_{k}[} = c_k$ mit $k= 1,..,n$.\\
+	$T[a,b]$ ist der Vektorraum der Treppenfunktionen.
+\end{frameddefn}
+
+\begin{frameddefn}
+	Sei $\phi \in T[a,b]$ und $a=x_0 < x_1 < ... < x_k = b$ und $c_i = \phi_{|]x_{i-1}, x_{i}[}$. Dann:
+	\[
+	\int_{a}^{b} \phi(x) \, dx := \sum_{i=1}^{n} c_i (x_i - x_{i-1})
+	\]
+\end{frameddefn}
+
+\begin{framedthm}
+	Sei $\phi, \psi \in T[a,b]$ und $\lambda \in \R$. Dann gilt:
+	\begin{itemize}
+		\item $\int_{a}^{b} (\phi(x) + \psi(x))dx = \int_{a}^{b} \phi(x) dx + \int_{a}^{b} \psi(x) dx$
+		\item $\int_{a}^{b} (\lambda\phi(x))dx = \lambda \int_{a}^{b} \phi(x)dx$
+		\item $\phi \geq \psi \ \Rightarrow\ \int_{a}^{b} \phi(x)dx \geq \int_{a}^{b} \psi(x)dx$
+	\end{itemize}
+\end{framedthm}
+
+\begin{frameddefn}[Ober- und Unterintegral]
+	Sei $f\st [a,b] \to \R$ eine beliebige, aber beschränkte Funktion. Dann:
+	\begin{itemize}
+		\item $\overline{\int_{a}^{b}} f(x)dx = \inf\{\int_{a}^{b} \phi(x)dx \ |\ \phi \in T[a,b], \phi \geq f\}$ (Oberintegral)
+		\item $\underline{\int_{a}^{b}} f(x)dx = \sup\{\int_{a}^{b} \psi(x)dx \ |\ \psi \in T[a,b], \psi \leq f\}$ (Unterintegral)
+	\end{itemize}
+	$f$ heißt Riemann-integrierbar, wenn:
+	\[
+	\overline{\int_{a}^{b}} f(x)dx = \underline{\int_{a}^{b}} f(x)dx =: \int_{a}^{b} f(x)dx
+	\]
+\end{frameddefn}
+
+\begin{framedthm}
+	$f\st [a,b] \to \R$ ist (Riemann) integrierbar $\iff$ $\forall \varepsilon > 0\st \exists \phi,\psi \in T[a,b]\st \psi \leq f \leq \phi$ und\\
+	$\int_{a}^{b} \phi(x)dx - \int_{a}^{b} \psi(x)dx < \varepsilon$
+\end{framedthm}
+
+\begin{framedthm}
+	Jede stetige Funktion ist integrierbar.
+\end{framedthm}
+
+\begin{framedthm}
+	Jede monotone Funktion ist integrierbar.
+\end{framedthm}
+
+\begin{framedthm}
+	Seien $f,g\st [a,b] \to \R$ zwei integrierbare Funktionen und $\lambda \in \R$. Dann sind auch folgende Funktionen integrierbar:
+	\begin{enumerate}
+		\item [(i)] $f+g$
+		\item [(ii)] $\lambda f$
+		\item [(iii)] $f_+$, $f_{-}$
+		\item [(iv)] $\forall p \geq 1\st |f|^p$
+	\end{enumerate}
+	Außerdem gilt:
+	\begin{itemize}
+		\item $f \geq g \ \Rightarrow \ \int_{a}^{b} f(x) dx \geq \int_{a}^{b} g(x) dx$
+		\item $|\int_{a}^{b} f(x) dx| \leq \int_{a}^{b} |f(x)| dx $
+	\end{itemize}
+\end{framedthm}
+
+\begin{framedthm}[Mittelwertsatz der Integralrechnung]
+	Sei $f\st[a,b] \to \R$ stetig, dann  $\exists \xi \in [a,b]\st \int_{a}^{b} f(x)dx = (b-a)f(\xi)$.
+\end{framedthm}
+
+\begin{frameddefn}[Riemannsche Summen]
+	Sei $[a,b] \subset \R$ und $a=x_0 < x_1 < ... < x_n = b$ eine Unterteilung des Intervalls $[a,b]$. Sei außerdem $\xi_k \in [x_{k-1}, x_k]$, $(\xi_k)_{k=1,...,n}$ eine Stützstelle. Dann definiert man die Riemannsche Summe der Funktion $f$ zur Unterteilung $(x_i)_{i=0,...,n}$ und Stützstelle $(\xi_i)_{i=1,...,n}$ folgendermaßen:
+	\[
+	\mathcal{R}_f((x_k), (\xi_k)) := \sum_{k=1}^n f(\xi_k) (x_k - x_{k-1}) 
+	\]
+	$\mu((x_i)) = \max(x_i - x_{i-1})_{i=1,...,n}$ gibt die Feinheit der Unterteilung an.
+\end{frameddefn}
+
+\begin{framedthm}
+	Sei $f\st[a,b] \to \R$ eine integrierbare Funktion.
+	\[
+	\forall \varepsilon > 0\st \exists \delta > 0\st \forall (x_i)_{i=0,...,n}\st \forall (\xi_i)_{i=1,...,n}\st \mu((x_i)) < \delta \Rightarrow \biggl|\int_a^b f(x) dx - \mathcal{R}_f((x_i), (\xi_i))\biggr| < \varepsilon
+	\]
+	Dies erlaubt es, dass Riemannsche Integral als Grenzwert zu betrachten.
+\end{framedthm}
+
+
+\section{Zusammenhang zwischen Integral und Ableitung}
+
+\begin{framedthm}
+	Sei $f\st[a,b] \to \R$ eine integrierbare Funktion. Dann:
+	\[
+	\forall x_1,x_2 \in [a,b]\st \int_{x_{1}}^{x_{2}} f(x) dx = - \int_{x_{2}}^{x_{1}} f(x)dx
+	\]
+	\[
+	\forall x_1, x_2, x_3 \in [a,b]\st \int_{x_{1}}^{x_{3}} f(x) dx = \int_{x_{1}}^{x_{2}} f(x) dx + \int_{x_{2}}^{x_{3}} f(x) dx
+	\]
+	\[
+	F(x) := \int_a^x f(t) dt
+	\]
+\end{framedthm}
+
+\begin{framedthm}
+	Sei $f\st[a,b] \to \R$ eine integrierbare Funktion und sei $f$ in $x_0 \in [a,b]$ stetig. Dann ist die Funktion $F(x) = \int_a^x f(t) dt$ in $x_0$ differenzierbar und $F'(x_0) = f(x_0)$.
+\end{framedthm}
+
+\begin{frameddefn}[Stammfunktion]
+	Eine differenzierbare Funktion $F\st[a,b] \to \R$ heißt Stammfuntkion oder primitive Funktion einer Funktion $f\st[a,b] \to \R$ falls $\forall x\in [a,b]\st F'(x) = f(x)$ gilt.
+\end{frameddefn}
+
+\begin{framedthm}[Fundamentalsatz der Differential- und Integralrechnung]
+	Sei $f\st[a,b] \to \R$ eine stetige Funktion und sei $F\st[a,b] \to \R$ eine Stammfunktion von $f$. Dann gilt:
+	\[
+	\int_a^b f(x) dx = F(b) - F(a) =: (F(x)) \bigr|_a^b
+	\]
+\end{framedthm}
+
+\begin{framedthm}[Integration durch Substitution]
+	Sei $f\st I \to \R$ stetig und $\phi\st [a,b] \to \R$ stetig differenzierbar sowie $\phi([a,b]) = I$. Dann:
+	\[
+	\int_a^b f(\phi(x)) \phi'(x) dx = \int_{\phi(a)}^{\phi(b)} f(t) dt
+	\]
+\end{framedthm}
+
+\begin{framedthm}[Partielle Integration]
+	Seien $f,g\st [a,b] \to \R$ stetig differenzierbare Funktionen. Dann:
+	\[
+	\int_a^b f'(x)g(x) dx = (f(x)g(x))\bigr|_a^b - \int_a^b f(x) g'(x) dx
+	\]
+\end{framedthm}

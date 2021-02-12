@@ -1,0 +1,90 @@
+\documentclass[a4paper, 12pt]{report}
+
+%%%%%%%%%%%%
+% Packages %
+%%%%%%%%%%%%
+
+\usepackage[german]{babel}
+\usepackage[noheader]{../packages/sleek}
+\usepackage{../packages/sleek-title}
+\usepackage{../packages/sleek-theorems}
+\usepackage{../packages/sleek-listings}
+
+\usepackage{todonotes}
+
+%%%%%%%%%%%%%%
+% Title-page %
+%%%%%%%%%%%%%%
+
+\logo{../resources/logo/ubt.pdf}
+\institute{Universität Bayreuth}
+\faculty{Physik}
+%\department{Department of Anything but Psychology}
+\title{Analysis}
+\subtitle{Sätze und Definitionen}
+\author{von\\Moritz Schramm}%\textit{Author}\\François \textsc{Rozet}}
+%\supervisor{Linus \textsc{Torvalds}}
+%\context{Well, I was bored...}
+\date{Wintersemester 20/21}
+
+%%%%%%%%%%%%%%%%
+% Bibliography %
+%%%%%%%%%%%%%%%%
+
+\addbibresource{../resources/bib/references.bib}
+
+%%%%%%%%%%
+% Others %
+%%%%%%%%%%
+
+\lstdefinestyle{latex}{
+	language=TeX,
+	style=default,
+	%%%%%
+	commentstyle=\ForestGreen,
+	keywordstyle=\TrueBlue,
+	stringstyle=\VeronicaPurple,
+	emphstyle=\TrueBlue,
+	%%%%%
+	emph={LaTeX, usepackage, textit, textbf, textsc}
+}
+
+\FrameTBStyle{latex}
+
+\def\tbs{\textbackslash}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\st}{{:}\ }
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+
+\begin{document}
+	\maketitle
+	\romantableofcontents
+	
+	\chapter{Reelle Zahlen}
+	\input{./content/chap1.tex}
+	
+	\chapter{Folgen}
+	\input{./content/chap2.tex}
+	
+	\chapter{Reihen}
+	\input{./content/chap3.tex}
+	
+	\chapter{Stetige Funktionen}
+	\input{./content/chap4.tex}
+	
+	\chapter{Differentialrechnung}
+	\input{./content/chap5.tex}
+	
+	\chapter{Das Riemannsche Integral}
+	\input{./content/chap6.tex}
+	
+\end{document}

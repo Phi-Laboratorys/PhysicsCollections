@@ -1,0 +1,143 @@
+\begin{frameddefn}[Differenzierbarkeit einer Funktion]
+	Sei $V \subset \R$ eine Menge und $f\st V \to \R$ oder $\C$ eine Funktion. Dann heißt $f$ in einem Punkt $x_0 \in V$ differenzierbar falls $x_0$ ein Häufungspunkt von $V$ ist und 
+	\[
+	f'(x_0) = \lim\limits_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \qquad (x \neq x_0)
+	\] 
+	existiert.
+\end{frameddefn}
+
+\section{Allgemeine Eigenschaften und wichtige Ableitungsregeln}
+
+\begin{framedthm}[Stetigkeit von differenzierbaren Funktionen]
+	Sei $f\st I \to \R$ oder $\C$ eine Funktion, die in $x_0 \in I$ differenzierbar ist. Dann ist $f$ in $x_0$ stetig.
+\end{framedthm}
+
+\begin{framedthm}[Lineare Approximation]
+	Sei $f\st I \to \R$ eine Funktion. Dann ist $f$ genau dann in $x_0 \in I$ differenzierbar, wenn es eine Konstante $c \in \R$ gibt, so dass $f(x) = f(x_0) + c(x-x_0) + \textit{o}(|x-x_0|)$ für $x \to x_0$ (mit $c=f'(x_0)$).
+\end{framedthm}
+
+
+\begin{framedthm}[Algebraische Operationen]
+	Seien $f_1, f_2 \st I \to \R$ Funktionen die in $x_0$ differenzierbar sind und $\lambda \in \R$ sowie\\ $f_2(x_0) \neq 0$. Dann sind folgende Operationen auch differenzierbar:
+	\begin{enumerate}
+		\item [(i)] $(f_1 + f_2)'(x_0) = f_1'(x_0) + f_2'(x_0)$
+		\item [(ii)] $(\lambda f_1)'(x_0) = \lambda f_1 ' (x_0)$
+		\item [(iii)] $(f_1 \cdot f_2)'(x_0) = f_1'(x_0) f_2(x_0) + f_1(x_0) f_2'(x_0)$
+		\item [(iv)] $\left(\frac{f_1}{f_2}\right)'(x_0) = \frac{f_1'(x_0) f_2(x_0) - f_1(x_0) f_2'(x_0)}{f_2^2(x_0)}$
+	\end{enumerate}
+\end{framedthm}
+
+
+\begin{framedthm}[Kettenregel]
+	Sei $f_1\st I_1 \to \R$ und $f_2\st I_2 \to \R$, sodass $f_1(I_1) \subset I_2$. Die Funktion $f_1$ sei in $x_1 \in I_1$ differenzierbar und $f_2$ in $x_2 = f(x_1)$ differenzierbar. Dann ist $g(x) = (f_1 \circ f_2)(x)$ in $x_2$ differenzierbar und $g'(x) = f_2'(f_1(x_1)) f_1'(x_1)$.
+\end{framedthm}
+
+\begin{framedthm}[Ableitung der Umkehrfunktion]
+	Sei $f\st I \to J$ bijektiv und stetig. Wenn $f$ im Punkt $x_0 \in I$ differenzierbar ist und $f'(x_0) \neq 0$, dann ist $f^{-1} \st J \to I$ im Punkt $y_0 = f(x_0) \in J$ differenzierbar und
+	\[
+	(f^{-1} (y_0))' = \frac{1}{f'(f^{-1}(y_0))} = \frac{1}{f'(x_0)}
+	\]
+\end{framedthm}
+
+\begin{frameddefn}[Höhere Ableitungen und stetige Differenzierbarkeit]
+	Sei $f\st I \to \R$ differenzierbar. Falls $f' \st I \to \R$ in $x_0$ differenzierbar ist, so heißt
+	\[
+	(f')'(x_0) = f''(x_0)
+	\]
+	die zweite Ableitung.\\
+	Mit Induktion: $f\st I \to \R$ heißt $k$-mal differenzierbar in $x_0$, falls die $(k-1)$-te Ableitung $f^{(k-1)} \st I \to \R$ in $x_0$ differenzierbar ist, $f^{(k)}(x_0) = (f^{(k-1)}(x_0))'$.\\
+	\begin{itemize}
+		\item $f$ heißt $k$-mal differenzierbar, wenn $f$ in jedem Punkt aus $I$ $k$-mal differenzierbar ist.
+		\item $f$ heißt $k$-mal \textit{stetig differenzierbar} in $I$, wenn $f$ $k$-mal differenzierbar ist und $f^{(k)}\st I \to \R$ stetig ist.
+	\end{itemize}
+\end{frameddefn}
+
+\newpage
+\section{Die zentralen Sätze der Differentialrechnung}
+
+\begin{frameddefn}[Lokale Extrema]
+	Sei $I \subset \R$ ein Intervall, $f\st I \to \R$ eine reelle Funktion. Man sagt, $f$ hat in $x_0 \in I$ ein
+	\begin{enumerate}
+		\item [(i)] lokales Maximum (bzw. streng lokales Maximum) wenn\\ $\exists \varepsilon_0 > 0\st \forall x \in I \cap ]x_0 - \varepsilon_0, x_0 + \varepsilon_0[\st f(x) \leq f(x_0)$ (bzw. $f(x) < f(x_0)$ mit $x \neq x_0$)
+		\item [(ii)] lokales Minimum (bzw. streng lokales Minimum) wenn\\ $\exists \varepsilon_0 > 0\st \forall x \in I \cap ]x_0 - \varepsilon_0, x_0 + \varepsilon_0[\st f(x) \geq f(x_0)$ (bzw. $f(x) > f(x_0)$ mit $x \neq x_0$)
+	\end{enumerate}
+\end{frameddefn}
+
+\begin{framedthm}[Satz von Fermat]
+	Sei $f\st I \to \R$ differenzierbar in $x_0 \in I$ und sei in $x_0$ ein lokales Extrema sowie $\exists \delta_0 \st ]x_0 - \delta_0, x_0 + \delta_0[ \subset I$. Dann gilt $f'(x_0) = 0$.
+\end{framedthm}
+
+\begin{framedthm}[Satz von Rolle]
+	Sei $f\st [a,b] \to \R$ eine stetige Funktion mit $f(a)=f(b)$. Wenn $f$ in $]a,b[$ differenzierbar ist, dann gilt: $\exists x_0 \in ]a,b[\st f'(x_0) = 0$.
+\end{framedthm}
+
+\begin{framedthm}[Mittelwertsatz der Differentialrechnung]
+	Sei $f\st [a,b] \to \R$ eine stetige Funktion die auf dem Intervall $]a,b[$ differenzierbar ist. Dann gilt: \[
+	\exists x_0 \in ]a,b[\st f'(x_0) = \frac{f(b) - f(a)}{b-a}
+	\]
+\end{framedthm}
+
+\begin{framedthm}[Satz von Cauchy]
+	Seien $f,g\st [a,b] \to \R$ stetige Funktionen die auf $[a,b]$ differenzierbar sind. Dann gilt:\\
+	$\exists x_0 \in ]a,b[\st f'(x_0) (g(b)-g(a)) = g'(x_0) (f(b)-f(a))$
+\end{framedthm}
+
+\begin{framedthm}[Monotonie von Funktionen]
+	Sei $f\st [a,b] \to \R$ eine stetige Funktion die auf $]a,b[$ differenzierbar ist. Dann gilt:
+	\begin{enumerate}
+		\item [(i)] $\forall x \in ]a,b[\st f'(x) > 0 \ \Rightarrow \ f$ ist \textit{streng} monoton wachsend. 
+		\item [(ii)] $f$ ist monoton wachsend $\Rightarrow \ \forall x \in ]a,b[ \st f'(x) \geq 0$.
+	\end{enumerate}
+\end{framedthm}
+
+\begin{framedthm}[Minimum bzw. Maximum einer Funktion]
+	Sei $f\st]a,b[ \to \R$ differenzierbar. Wenn $x_0 \in ]a,b[$ existiert, so dass $f'(x_0) = 0$ und $f''(x_0)$ existiert mit $f''(x_0) > 0$ (bzw. $f''(x_0) < 0$. Dann hat $f$ in $x_0$ ein streng lokales Minimum (bzw. Maximum).
+\end{framedthm}
+
+\section{Konvexität}
+
+\begin{frameddefn}[Konverxe und konkave Funktionen]
+	Sei $I \subset \R$. $f\st I \to \R$ heißt \textit{konvex}, falls $\forall x_0, x_1 \in I\st \forall \lambda \in [0,1]\st f(\lambda x_1 + (1-\lambda) x_0) \leq \lambda f(x_1) + (1-\lambda) f(x_0)$. $f$ heißt \textit{konkav}, wenn $-f$ konvex ist.
+\end{frameddefn}
+
+\begin{framedthm}[Kriterium für Konvexität]
+	Sei $f\st I \to \R$, wobie $I$ ein offenes Intervall ist und $f$ zwei mal differenzierbar ist:
+	\[
+	f \textrm{ ist konvex } \iff\  \forall x \in I\st f''(x) \geq 0 \ \iff\ f' \textrm{ ist monoton wachsend}
+	\]
+\end{framedthm}
+
+\begin{framedthm}[Regel von l'Hôspital]
+	Seien $f,g \st ]a,b[ \to \R$ differenzierbare Funktionen und $\forall x \in ]a,b[\st g'(x) \neq 0$ (dabei ist $a=-\infty$ und $b=\infty$ zugelassen). Gilt dann:
+	\[
+	\lim\limits_{x \to a} f(x) = \lim\limits_{x \to a} g(x) = 0 \textrm{ oder } \lim\limits_{x \to a} g(x) = \infty
+	\]
+	und existiert der Grenzwert:
+	\[
+	\lim\limits_{x \to a} \frac{f'(x)}{g'(x)} = L \textrm{ wobei } x > a \textrm{ und } -\infty\leq L \leq \infty
+	\]
+	Dann gilt:
+	\[
+	\lim\limits_{x \to a} \frac{f(x)}{g(x)} = L \textrm{ wobei } x > a
+	\]
+	\textbf{Hinweis:} Es müssen \textit{alle} Voraussetzungen erfüllt sein (d.h. differenzierbar, $g'(x) = 0$, Limes existiert, Zähler und Nenner gehen gegen $0$ oder $\infty$). Die Regel gilt ebenso wenn $x \to b$ mit $x < b$.
+\end{framedthm}
+
+\newpage
+\subsection{Taylor Reihe}
+
+\begin{framedthm}[Satz von Taylor]
+	Sei $f\st I \to \R$ eine Funktion und $x_0, x \in I$. Sei $I_0 = [x, x_0]$ falls $x < x_0$ ($[x_0, x]$ falls $x_0 < x$) und $J_0$ das offene Intervall von $I_0$. Die Funktion $f_{|I_{0}}$ und ihre ersten $n$ Ableitungen seien auf $I_0$ stetig und $f^{(n)}_{|J_{0}}$ ist differenzierbar. Dann existiert ein $\xi$ zwischen $x$ und $x_0$, sodass gilt:
+	\[
+	f(x) = \sum^{n}_{k=0} \frac{f^{(n)}(x_0)}{k!} (x-x_0)^k + r_n(x_0, x)
+	\]
+	wobei
+	\[
+	r_n(x_0,x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0)^{n+1} \textrm{ (Restglied nach Lagrange)}
+	\]
+	oder
+	\[
+	r_n(x_0,x) = \frac{f^{(n+1)}(\xi)}{n!} (x-\xi)^{n} (x-x_0) \textrm{ (Restglied nach Cauchy)}
+	\]
+\end{framedthm}
+
