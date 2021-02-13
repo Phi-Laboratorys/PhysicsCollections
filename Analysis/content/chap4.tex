@@ -74,13 +74,13 @@ Dabei bezeichnet $f_{|A}\st A \to \K$ mit $f_{|A}(a) = f(a)$ die Restriktion von
 \begin{frameddefn}[Beschränkheit einer Funktion]
 	Sei $f\st D \to \K$.
 	\begin{align*}
-		f \textrm{ ist beschränkt} \ \iff\ \exists M > 0\st \forall z \in D\st |f(x)| \leq M
+		f \textrm{ ist beschränkt} \ \iff\ \exists M > 0\st \forall z \in D\st |f(z)| \leq M
 	\end{align*}
 	Ist $f$ beschränkt, wird
 	\begin{align*}
 		||f||_{C^o} = \sup\{|f(z)|\ \big|\ z \in D)\}
 	\end{align*}
-	als Supremumsnorm von f.
+	als Supremumsnorm von f bezeichnet.
 \end{frameddefn}
 
 \begin{framedthm}[Eigenschaften der Supremumsnorm]
@@ -97,7 +97,7 @@ Dabei bezeichnet $f_{|A}\st A \to \K$ mit $f_{|A}(a) = f(a)$ die Restriktion von
 \end{frameddefn}
 
 \begin{framedthm}
-	Sei $\sum_{n=0}^{\infty}f_n$ konvergent normal. Für $z \in D$ setze $f(z) = \sum_{n=0}^{\infty}f_n$. Dann ist die Funktion $f\st D \to \K$ stetig.
+	Sei $\sum_{n=0}^{\infty}f_n$ konvergent normal. Für $z \in D$ setze $f(z) = \sum_{n=0}^{\infty}f_n(z)$. Dann ist die Funktion $f\st D \to \K$ stetig.
 \end{framedthm}
 
 \begin{framedquest}[Potenzreihen sind konvergent normal]
@@ -133,11 +133,11 @@ Dabei bezeichnet $f_{|A}\st A \to \K$ mit $f_{|A}(a) = f(a)$ die Restriktion von
 \begin{frameddefn}
 	Sei $f\st]a,\infty[\to\R$, dann gilt:
 	\begin{enumerate}
-		\item[(i)] $\lim\limits_{x \to \infty} f(x) = \alpha \in \R \ \iff\ \forall \varepsilon>0\st \exists N \in \R\st \forall x > \max(a,N)\st |f(x-\alpha)| < \varepsilon$
+		\item[(i)] $\lim\limits_{x \to \infty} f(x) = \alpha \in \R \ \iff\ \forall \varepsilon>0\st \exists N \in \R\st \forall x > \max(a,N)\st |f(x)-\alpha| < \varepsilon$
 		\item[(ii)] $\lim\limits_{x \to \infty} f(x) = \infty \ \iff\ \forall M>0\st \exists K \in \R\st \forall x > K\st f(x) > M$
 		\item[(iii)] $\lim\limits_{x \to \infty} f(x) = -\infty \ \iff\ \forall M>0\st \exists K \in \R\st \forall x > K\st f(x) < M$
 	\end{enumerate}
-	Für $\lim\limits_{x \to \infty} f(x)$ ähnlich.
+	Für $\lim\limits_{x \to -\infty} f(x)$ ähnlich.
 \end{frameddefn}
 
 
@@ -147,7 +147,7 @@ Dabei bezeichnet $f_{|A}\st A \to \K$ mit $f_{|A}(a) = f(a)$ die Restriktion von
 		\item \textit{monoton wachsend} wenn $\forall x_1, x_2 \in M\st x_1 < x_2 \Rightarrow f(x_1) \leq f(x_2)$
 		\item \textit{streng monoton wachsend} wenn $\forall x_1, x_2 \in M\st x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$
 		\item \textit{monoton fallend} wenn $\forall x_1, x_2 \in M\st x_1 < x_2 \Rightarrow f(x_1) \geq f(x_2)$
-		\item \textit{monoton wachsend} wenn $\forall x_1, x_2 \in M\st x_1 < x_2 \Rightarrow f(x_1) > f(x_2)$
+		\item \textit{streng monoton fallend} wenn $\forall x_1, x_2 \in M\st x_1 < x_2 \Rightarrow f(x_1) > f(x_2)$
 	\end{itemize}
 \end{frameddefn}
 
