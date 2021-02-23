@@ -47,7 +47,7 @@
 \begin{framedthm}[Sandwich Theorem]
 	\begin{enumerate}
 		\item[(i)] Seien $(x_n)_{n\geq 1}$ und $(y_n)_{n\geq 1}$ Folgen mit $\lim\limits_{n \to \infty} x_n = x$ und $\lim\limits_{n \to \infty} y_n = y$. Wenn $x < y$ folgt $\exists N \in \N\st \forall n \geq N\st x_n < y_n$.
-		\item[(ii)] Seien $(x_n)_{n\geq 1}$ und $(y_n)_{n\geq 1}$ Folgen mit $\lim\limits_{n \to \infty} x_n = x$ und $\lim\limits_{n \to \infty} y_n = y$.\\Wenn $\forall n \geq n_0\st x_n \leq y_n$ folgt $x \leq y$.
+		\item[(ii)] Seien $(x_n)_{n\geq 1}$ und $(y_n)_{n\geq 1}$ Folgen mit $\lim\limits_{n \to \infty} x_n = x$ und $\lim\limits_{n \to \infty} y_n = y$.\\Wenn $\exists n_0 \in \N\st\forall n \geq n_0\st x_n \leq y_n$ folgt $x \leq y$.
 		\item[(iii)] Seien $(a_n)_{n\geq 1}$ $(b_n)_{n\geq 1}$ und $(c_n)_{n\geq 1}$ Folgen, sodass $\forall n\geq 1\st a_n \leq b_n \leq c_n$. Wenn $a_n$ und $c_n$ konvergieren mit $\lim\limits_{n \to \infty} a_n = \lim\limits_{n \to \infty} c_n$, dann konvergiert $b_n$ mit\\$\lim\limits_{n \to \infty} b_n = \lim\limits_{n \to \infty} a_n = \lim\limits_{n \to \infty} c_n$ (Sandwich Theorem).
 	\end{enumerate}
 \end{framedthm}
@@ -65,7 +65,7 @@
 \begin{framedthm}
 	\begin{enumerate}
 		\item[(i)] Sei $(a_n)_{n\geq 1}$ eine Folge, die gegen $\pm \infty$ konvergiert. Dann folgt $\exists N \in \N\st \forall n \geq N\st a_n \neq 0$ sowie $\lim\limits_{n \to \infty} \frac{1}{a_n} = 0$
-		\item[(ii)] Sei $(a_n)_{n\geq 1}$ eine Folge, sodass $\lim\limits_{n \to \infty} \frac{1}{a_n} = 0$. Mit der Annahme $\forall n \geq N\st a_n > 0$ (bzw. $a_n < 0$) folgt $\lim\limits_{n \to \infty} \frac{1}{a_n} = \infty$ (bzw. $-\infty$).
+		\item[(ii)] Sei $(a_n)_{n\geq 1}$ eine Folge, sodass $\lim\limits_{n \to \infty} a_n = 0$. Mit der Annahme $\forall n \geq N\st a_n > 0$ (bzw. $a_n < 0$) folgt $\lim\limits_{n \to \infty} \frac{1}{a_n} = \infty$ (bzw. $-\infty$).
 	\end{enumerate}
 \end{framedthm}
 
@@ -98,10 +98,10 @@
 \begin{frameddefn}[Monoton wachsende bzw. fallende Folgen]
 	Eine Folge $(a_n)_{n\geq 1}$ heißt
 	\begin{itemize}
-		\item \textit{monoton wachsend}, falls $\forall n \geq 1\st a_n \geq a_{n+1}$
-		\item \textit{streng monoton wachsend}, falls $\forall n \geq 1\st a_n > a_{n+1}$
-		\item \textit{monoton fallend}, falls $\forall n \geq 1\st a_n \leq a_{n+1}$
-		\item \textit{streng monoton fallend}, falls $\forall n \geq 1\st a_n < a_{n+1}$
+		\item \textit{monoton wachsend}, falls $\forall n \geq 1\st a_n \leq a_{n+1}$
+		\item \textit{streng monoton wachsend}, falls $\forall n \geq 1\st a_n < a_{n+1}$
+		\item \textit{monoton fallend}, falls $\forall n \geq 1\st a_n \geq a_{n+1}$
+		\item \textit{streng monoton fallend}, falls $\forall n \geq 1\st a_n > a_{n+1}$
 	\end{itemize}
 \end{frameddefn}
 
@@ -175,7 +175,7 @@
 \end{framedthm}
 
 \begin{framedthm}[Fundamentalsatz der Algebra]
-	Jedes Polynom $P$ mit $\textrm{grad}(P) \geq 1$ besitzt mindestens eine Nullstelle in $\C$.´
+	Jedes Polynom $P$ mit $\textrm{grad}(P) \geq 1$ besitzt mindestens eine Nullstelle in $\C$.
 \end{framedthm}
 
 \subsection{Konvergenz in $\C$}
