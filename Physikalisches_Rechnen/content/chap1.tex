@@ -189,45 +189,71 @@ Es gilt:
 \section{Fourier Reihen}
 
 \begin{framedprop}[Fourier Reihe]
+	Meistens ist $L = \pi$. Dann ist die Fourier Reihe von $f$:
 	\[
-	f(x) = \sum_{n=-\infty}^{\infty} c_n e^{inx}
-	\]
-	\[
-	c_n = \frac{1}{2\pi} \int_{-\pi}^{\pi}dx \, f(x) \, e^{-inx}
+	f(x) = \sum_{n=-\infty}^{\infty} c_n \exp\left(\frac{inx \pi}{L}\right) \qquad \textrm{ mit }
+	c_n = \frac{1}{2L} \int_{-L}^{L} \dd x \, f(x) \, \exp\left(\frac{-inx \pi}{L}\right)
 	\]
 \end{framedprop}
 
 \section{Dirac-Delta-Funktion}
 
-\begin{frameddefn}[Als Ableitung der Stufenfunktion]
-	
+\begin{frameddefn}[Als Ableitung der Stufenfunktion $\Theta$]
+	\[\delta(x) = \frac{\dd}{\dd x}\Theta(x)\]
 \end{frameddefn}
 
 \begin{frameddefn}[Als Limes einer geeigneten Funktionenschar]
-	
+	\[
+	\delta(x) = \lim\limits_{\tau \to 0} \delta_{\tau}(x)
+	\]
 \end{frameddefn}
 
 \begin{frameddefn}[Durch integrale Eigenschaft]
-	
+	\[
+	\int_{x_1}^{x_2} \dd x\, \delta(x-x_0)\, g(x) = \biggl\{\begin{array}{ll}
+		g(x_0) \ \ \ \textrm{falls}\  x_1 < x_0 < x_2 \\
+		0, \  \textrm{sonst}
+	\end{array}
+	\]
 \end{frameddefn}
 
 Rechenregeln:
+\begin{itemize}
+	\item Gerade Funktion: $\delta(x) = \delta(-x)$
+	\item $\delta(x-x_0) = \delta(x_0 - x)$
+	\item $\delta(\alpha x) = \frac{1}{|\alpha|} \delta(x)$
+	\item $\delta(f(x)) = \sum_{i} \frac{1}{|f'(x_i)|} \delta(x-x_i)$ wobei $x_i$ die Nullstellen von $f$ sind. (Es muss $f'(x_i) \neq 0$ gelten)
+\end{itemize}
 
 \section{Fourier Transformation}
 
 \begin{framedprop}[Fourier Transformation]
 	Transformation in reziproken Raum (Fourier Raum):
 	\[
-	\tilde{f}(k) = \int_{-\infty}^{\infty} dx\, f(x)\, e^{-ikx} =: \mathcal{F}\, f(x)
+	\tilde{f}(k) = \int_{-\infty}^{\infty} \dd x\, f(x)\, e^{-ikx} =: \mathcal{F}\, f(x)
 	\]
 	Rücktransformation:
 	\[
-	f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} dk\, \tilde{f}(k)\, e^{+ikx} =: \mathcal{F}^{-1}\, \tilde{f}(k)
+	f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \dd k\, \tilde{f}(k)\, e^{+ikx} =: \mathcal{F}^{-1}\, \tilde{f}(k)
  	\]
 \end{framedprop}
 
 Eigenschaften:
+\begin{itemize}
+	\item Linearität: $\mathcal{F}(a f(x) + b g(x)) = a\, \mathcal{F}\, f(x) + b\, \mathcal{F}\, g(x)$
+	\item Identität: $(\mathcal{F}^{-1}\,\circ \mathcal{F}) f(x) = f(x)$
+	\item Differentiation: $\frac{\dd}{\dd x}f = \mathcal{F}^{-1}\, ik\, \mathcal{F}\, f(x)$
+	\item Faltung: $(f \star g)(x) = \int_{-\infty}^{\infty} \dd x' f(x') g(x - x') = \tilde{f}(k)\tilde{g}(k)$
+	\item Verschobene Funktion: Sei $g(x) = f(x-x_0)$. Dann: $\tilde{g}(k) = \exp(-ikx_0)\tilde{f}(k)$
+\end{itemize}
 
 \begin{framedprop}[Mehrdimensionale Fourier-Transformation]
+Seien $\mathbf{r}, \mathbf{k} \in \R^d$.
+\[
+\tilde{f}(\mathbf{k}) = \int_{\R^d} \dd\mathbf{r}\, f(\mathbf{r})\, e^{-i\,\mathbf{k}\cdot\mathbf{r}}
+\]
+\[
+f(\mathbf{r}) = \frac{1}{(2\pi)^d} \int_{\R^d} \dd\mathbf{k}\, \tilde{f}(\mathbf{k})\, e^{i\,\mathbf{k}\cdot\mathbf{r}}
+\]
 	
 \end{framedprop}
