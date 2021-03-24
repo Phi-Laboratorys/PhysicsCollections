@@ -18,40 +18,131 @@ Alle Regeln gelten auch für Differentiale, z.B. $\dd (\mathbf{a} \cdot \mathbf{
 \section{Krummlinige Bewegung}
 
 \begin{framedprop}[Grundlegende Bewegungsvektoren]
-Tangenteneinheitsvektor:
+Tangenteneinheitsvektor $\mathbf{t}$, Normaleneinheitsvektor $\mathbf{n}$ und Binormale $\mathbf{b}$:
 \[
-\mathbf{t} = \frac{\dd \mathbf{r}}{\dd s} = \frac{\dd \mathbf{r}/ \dd t}{|\dd \mathbf{r} / \dd t|}
-\]
-Normaleneinheitsvektor (Hauptnormale):
-\[
-\mathbf{n} = \frac{\dd \mathbf{t} / \dd s}{|\dd \mathbf{t} / \dd s|}
-\]
-Binormale:
-\[
+\mathbf{t} = \frac{\dd \mathbf{r}}{\dd s} = \left|\frac{\dd \mathbf{r}}{\dd t}\right|^{-1} \frac{\dd \mathbf{r}}{\dd t}  \qquad
+\mathbf{n} = \left|\frac{\dd \mathbf{t}}{\dd s}\right|^{-1} \frac{\dd \mathbf{t}}{\dd s}  \qquad
 \mathbf{b} = \mathbf{t} \times \mathbf{n}
 \]
 Krümmung $\kappa$ und Krümmungsradius $\rho$:
 \[
-\kappa = \left|\frac{\dd \mathbf{t}}{\dd s}\right| \quad \rho = \frac{1}{\kappa}
+\kappa = \left|\frac{\dd \mathbf{t}}{\dd s}\right| \qquad \rho = \frac{1}{\kappa}
+\]
+Nützliche Zusammenhänge:
+\[
+\dd\mathbf{r} = \frac{\dd \mathbf{r}}{\dd t}\dd t \qquad \dd s = |\dd\mathbf{r}| \qquad s = \int_{0}^{s} \dd s' = \int_{0}^{t} \left| \frac{\dd \mathbf{r}}{\dd t} \right| \dd t
 \]
 
 \end{framedprop}
 
 \section{Nabla Kalkül}
 
-\begin{framedprop}
-Nabla Operator:
+\begin{frameddefn}[Nabla und Laplace Operator]
 \[
-\nabla = \left( \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right)^t
+\nabla = \left( \frac{\partial}{\partial x},\, \frac{\partial}{\partial y},\, \frac{\partial}{\partial z} \right)^T
 \]
-\end{framedprop}
+\[
+\Delta = \nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
+\]
+\end{frameddefn}
+
+\begin{frameddefn}[Hesse Matrix]
+\[
+(\nabla\nabla f)_{ij} = 
+\left(\begin{array}{rrr} 
+	\frac{\partial^2 f}{\partial x^2} & \frac{\partial^2 f}{\partial x \partial y} & \frac{\partial^2 f}{\partial x \partial z} \\ 
+	\frac{\partial^2 f}{\partial y \partial x} & \frac{\partial^2 f}{\partial y^2} & \frac{\partial^2 f}{\partial y \partial z} \\ 
+	\frac{\partial^2 f}{\partial z \partial x} & \frac{\partial^2 f}{\partial z \partial y} & \frac{\partial^2 f}{\partial z^2} \\ 
+\end{array}\right)
+\]
+\end{frameddefn}
+
+\begin{frameddefn}[Gradient, Divergenz und Rotation]
+\[
+\textrm{grad}\, f(\mathbf{r}) = \nabla f(\mathbf{r}) \qquad
+\textrm{div}\, \mathbf{A}(\mathbf{r}) = \nabla \cdot \mathbf{A}(\mathbf{r}) \qquad
+\textrm{rot}\, \mathbf{A}(\mathbf{r}) = \nabla \times \mathbf{A}(\mathbf{r})
+\]
+Der Gradient gibt die Richtung des steilsten Anstiegs von $f$ an, der Betrag des Gradienten gibt an, wie groß diese Steigung ist.\\Die Divergenz ist ein Skalarfeld und gibt an, wie sehr die Vektoren an einem Punkt auseinanderstreben. Bei einem Stömungsfeld ist die Divergenz die Quelldichte. Senken haben negative Divergenz. Bei einer Divergenz gleich null ist das Feld quellfrei.\\Die Rotation gibt die lokale Wirbelstärke an. Ist diese gleich null, so ist das Feld wirbelfrei.
+\end{frameddefn}
+
 
 \section{Krummlinige Koordinaten}
 
+Die Punkte im $\R^3$ seien anstatt durch die kartesischen Koordinaten $x,y,z$ durch die neuen Koordinaten $u,v,w$ gekennzeichnet.
+
+\begin{frameddefn}[Jacobi Matrix]
+\[
+\mathbf{J} =
+\left(\begin{array}{rrr} 
+	\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} & \frac{\partial x}{\partial w} \\ 
+	\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} & \frac{\partial y}{\partial w} \\ 
+	\frac{\partial z}{\partial u} & \frac{\partial z}{\partial v} & \frac{\partial z}{\partial w} \\ 
+\end{array}\right)
+\textrm{ mit Inverse: }
+\mathbf{J}^{-1} = 
+\left(\begin{array}{rrr} 
+	\frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} & \frac{\partial u}{\partial z} \\ 
+	\frac{\partial v}{\partial x} & \frac{\partial v}{\partial y} & \frac{\partial v}{\partial z} \\ 
+	\frac{\partial w}{\partial x} & \frac{\partial w}{\partial y} & \frac{\partial w}{\partial z} \\ 
+\end{array}\right)
+\]
+\end{frameddefn}
+
+\begin{frameddefn}[Funktionaldeterminante]
+\[	
+\frac{\partial (x,y,z)}{\partial (u,v,w)} = \det(\mathbf{J})
+\]
+\end{frameddefn}
+
+\begin{framedprop}[Einheitsvektoren von krummlinigen Koordinaten]
+\[
+\mathbf{e}_u = \left| \frac{\partial \mathbf{r}}{\partial u} \right|^{-1} \frac{\partial \mathbf{r}}{\partial u} \qquad
+ \mathbf{e}_v = \left| \frac{\partial \mathbf{r}}{\partial v} \right|^{-1} \frac{\partial \mathbf{r}}{\partial v} \qquad
+ \mathbf{e}_w = \left| \frac{\partial \mathbf{r}}{\partial w} \right|^{-1} \frac{\partial \mathbf{r}}{\partial w}
+\]
+Im Allgemeinen sind die Einheitsvektoren vom Ort $\mathbf{r}$ abhängig. Nur in Spezialfällen (z.B. bei kartesischen Koordinaten) sind diese unabhängig. Die drei Einheitsvekoren bilden ein lokales Dreibein. Oft praktisch sind krummlinig-orthogonal Koordinaten, d.h. $\mathbf{e}_{u_{i}} \cdot \mathbf{e}_{u_{j}} = \delta_{ij}$.
+\end{framedprop}
+
+\begin{framedprop}[Wichtige krummlinige Koordinaten]
+	\begin{itemize}
+		\item Polarkoordinaten
+		\item Zylinderkoordinaten
+		\item Kugelkoordinaten
+	\end{itemize}
+\end{framedprop}
+
 \section{Kurvenintegrale}
+
+\begin{framedprop}[Kurvenintegral durch Substitution lösen]
+	Inhalt...
+\end{framedprop}
+
+\begin{framedthm}[Unabhängigkeit vom Weg]
+
+\end{framedthm}
 
 \section{Volumen- und ebene Flächenintegrale}
 
 \section{Flächenintegrale}
 
+\begin{framedprop}[Parametrisierung]
+	Inhalt...
+\end{framedprop}
+
 \section{Integralsätze}
+
+\begin{framedthm}[Satz von Gauß (Divergence Theorem)]
+	Sei $\mathbf{A}(\mathbf{r})$ ein Vektorfeld, $V$ ein Volumen mit geschlossener Oberfläche $\partial V$ (Normalen nach außen gerichtet). Dann gilt:
+	\[
+	\oint_{\partial V} \dd \mathbf{f} \cdot \mathbf{A}(\mathbf{r}) = \int_{V} \dd \mathbf{r} \,\, \nabla \cdot \mathbf{A}(\mathbf{r}) 
+	\] 
+\end{framedthm}
+
+\begin{framedthm}[Satz von Stokes]
+	Sei $\mathbf{A}(\mathbf{r})$ ein stetig differenzierbares Vektorfeld, $\partial F$ eine glatte Kurve und $F$ eine über $\partial F$ gespannte Fläche. Dann gilt:
+	\[
+	\oint_{\partial F} \dd \mathbf{r} \cdot \mathbf{A}(\mathbf{r}) = \int_F \dd \mathbf{f} \cdot (\nabla \times \mathbf{A}(\mathbf{r}))
+	\]
+\end{framedthm}
+
