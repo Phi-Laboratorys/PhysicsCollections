@@ -1,0 +1,76 @@
+\documentclass[a4paper, 12pt]{report}
+
+%%%%%%%%%%%%
+% Packages %
+%%%%%%%%%%%%
+
+\usepackage[german]{babel}
+\usepackage[noheader]{../packages/sleek}
+\usepackage{../packages/sleek-title}
+\usepackage{../packages/sleek-theorems}
+\usepackage{../packages/sleek-listings}
+
+\usepackage{todonotes}
+
+%%%%%%%%%%%%%%
+% Title-page %
+%%%%%%%%%%%%%%
+
+\logo{../resources/logo/ubt.pdf}
+\institute{Universität Bayreuth}
+\faculty{Physik}
+%\department{Department of Anything but Psychology}
+\title{Lineare Algebra}
+\subtitle{Sätze und Definitionen}
+\author{von\\Moritz Schramm}%\textit{Author}\\François \textsc{Rozet}}
+%\supervisor{Linus \textsc{Torvalds}}
+%\context{Well, I was bored...}
+\date{Sommersemester 2021}
+
+%%%%%%%%%%%%%%%%
+% Bibliography %
+%%%%%%%%%%%%%%%%
+
+\addbibresource{../resources/bib/references.bib}
+
+%%%%%%%%%%
+% Others %
+%%%%%%%%%%
+
+\lstdefinestyle{latex}{
+	language=TeX,
+	style=default,
+	%%%%%
+	commentstyle=\ForestGreen,
+	keywordstyle=\TrueBlue,
+	stringstyle=\VeronicaPurple,
+	emphstyle=\TrueBlue,
+	%%%%%
+	emph={LaTeX, usepackage, textit, textbf, textsc}
+}
+
+\FrameTBStyle{latex}
+
+\def\tbs{\textbackslash}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\st}{{:}\ }
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+
+\begin{document}
+	\maketitle
+	\romantableofcontents
+	
+	\chapter{Chapter 1}
+	\input{./content/chap1.tex}
+	
+	
+\end{document}
