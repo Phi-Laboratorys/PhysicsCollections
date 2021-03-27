@@ -66,6 +66,18 @@ Nützliche Zusammenhänge:
 Der Gradient gibt die Richtung des steilsten Anstiegs von $f$ an, der Betrag des Gradienten gibt an, wie groß diese Steigung ist.\\Die Divergenz ist ein Skalarfeld und gibt an, wie sehr die Vektoren an einem Punkt auseinanderstreben. Bei einem Stömungsfeld ist die Divergenz die Quelldichte. Senken haben negative Divergenz. Bei einer Divergenz gleich null ist das Feld quellfrei.\\Die Rotation gibt die lokale Wirbelstärke an. Ist diese gleich null, so ist das Feld wirbelfrei.
 \end{frameddefn}
 
+Nützliche Rechenregeln für $\nabla$:
+\begin{itemize}
+	\item grad, div und rot sind distributiv
+	\item $\nabla \cdot (f \mathbf{A}) = f \, (\nabla \cdot \mathbf{A}) + \mathbf{A} \cdot (\nabla f)$ und $\nabla \times (f \mathbf{A}) = f \, (\nabla \times \mathbf{A}) +  (\nabla f) \times \mathbf{A}$
+	\item $\nabla \times (\nabla f) = 0$ und $\nabla \cdot (\nabla \times \mathbf{A}) = 0$
+	\item $\mathbf{A} \cdot (\nabla f) = (\mathbf{A} \cdot \nabla) \, f$ und $\mathbf{A} \times (\nabla f) = (\mathbf{A} \times \nabla) \, f$ (Assoziativität)
+	\item $\nabla \cdot (\mathbf{A} \times \mathbf{B}) = \mathbf{B} \cdot \nabla \times \mathbf{A} - \mathbf{A} \cdot \nabla \times \mathbf{B}$
+	\item $\nabla \times (\mathbf{A} \times \mathbf{B}) = \mathbf{A} \nabla \cdot \mathbf{B} + \mathbf{B} \cdot \nabla \mathbf{A} - \mathbf{B} \nabla \cdot \mathbf{A} - \mathbf{A} \cdot \nabla \mathbf{B}$
+	\item $\nabla \times (\nabla \times \mathbf{A}) = \nabla \nabla \cdot \mathbf{A} - \nabla^2 \mathbf{A}$
+	
+\end{itemize}
+
 
 \section{Krummlinige Koordinaten}
 
@@ -120,7 +132,7 @@ Im Allgemeinen sind die Einheitsvektoren vom Ort $\mathbf{r}$ abhängig. Nur in 
 		\[
 		\mathbf{r} = \left(\begin{array}{c} \rho \sin\theta \cos\phi \\ \rho \sin\theta \sin\phi \\ \rho \cos\theta \end{array} \right) \textrm{ mit } \det \frac{\partial (x,y,z)}{\partial (\rho, \theta, \phi)} = \rho^2 \sin\theta \textrm{ und } \dd V = \rho^2 \sin\theta \, \dd \rho \, \dd \theta \, \dd \phi
 		\]
-		wobei $\rho \in [0, \infty)$, $\theta \in [0,\pi]$ und $\phi \in [0,2\pi)$. Wieder gilt: $\rho = \sqrt{x^2+y^2+z^2}$, $\theta = \frac{\pi}{2} - \arctan\frac{z}{\sqrt{x^2+y^2}}$ und $\tan\phi = \frac{y}{x}$
+		wobei $\rho \in [0, \infty)$, $\theta \in [0,\pi]$ und $\phi \in [0,2\pi)$. Wieder gilt: $\rho = \sqrt{x^2+y^2+z^2}$, $\theta = \frac{\pi}{2} - \arctan\frac{z}{\sqrt{x^2+y^2}}$ und $\tan\phi = \frac{y}{x}$.
 	\end{itemize}
 \end{framedprop}
 
@@ -149,10 +161,25 @@ Wenn $\mathbf{A}$ in einem \textit{einfach zusammenhängenden Gebiet} wirbelfrei
 
 \section{Volumen- und ebene Flächenintegrale}
 
+\begin{framedprop}[Ebenes Flächenintegral mit abhängigen Integrationsgrenzen]
+\[
+\int_{G} \dd\mathbf{r} \, f(\mathbf{r}) = \int_{x_{1}}^{x_{2}} \dd x \int_{y_{1}(x)}^{y_{2}(x)} \dd y \, f(x,y) = \int_{y_{1}}^{y_{2}} \dd y \int_{x_{1}(y)}^{x_{2}(y)} \dd x \, f(x,y)
+\]
+\end{framedprop}
+
+\begin{framedprop}[Volumenintegral mit wechsel des Koordinatensystems]
+\[
+\int_{V} \dd \mathbf{r} \, f(\mathbf{r}) = \int_{V} \dd x \, \dd y \, \dd z \, f(x,y,z) = \int_{V} \dd u \, \dd v \, \dd w \, f(u,v,w) \, \det\frac{\partial(x,y,z)}{\partial(u,v,w)}
+\]
+\end{framedprop}
+
 \section{Flächenintegrale}
 
-\begin{framedprop}[Parametrisierung]
-	Inhalt...
+\begin{framedprop}[Vektorielles Flächenelement bei beliebiger Fläche]
+\textbf{Unabhängig} von der Wahl der Parameter ist das vektorielle Flächenelement:
+\[
+\dd \mathbf{f} = \left(\frac{\partial \mathbf{r}}{\partial s} \times \frac{\partial \mathbf{r}}{\partial t} \right) \, \dd s \, \dd t \quad \textrm{ und damit: } \quad \int_{F} \dd \mathbf{f} \cdot \mathbf{A}(\mathbf{r}) \quad \textrm{ (}|\dd \mathbf{f}|\textrm{ falls }\mathbf{A}\textrm{ skalar)}
+\]
 \end{framedprop}
 
 \section{Integralsätze}
