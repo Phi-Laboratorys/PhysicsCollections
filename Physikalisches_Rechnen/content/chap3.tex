@@ -1,9 +1,68 @@
 \section{Gewöhnliche Differentialgleichunge (ODEs)}
 
+In gewöhnlichen Differentialgleichen kommt nur eine einzelne Unabhängige (z.B. $x$ oder $t$) vor. Autonome DGLs hängen nicht von der Veränderlichen ab. Allgemeine Form der $n$-ten Ordnung:
+\[
+y^{(n)}(x) = F(x, y(x), y'(x), ..., y^{(n-1)}(x))
+\]
+
 \subsection{Trennung der Variablen}
+\begin{framedprop}[Trennung der Variablen]
+Falls die DGL in der Form $y'(x) = h(x) \, g(y)$ vorliegt, kann man zur Lösung der DGL Trennung der Variablen verwenden:
+\[
+\frac{\dd y}{\dd x} = h(x) \, g(y) \ \Rightarrow \ \frac{1}{g(y)} \dd y = h(x) \, \dd x 
+\]
+\[
+\int_{y_0}^{y} \dd \tilde{y} \frac{1}{g(\tilde{y})} = \int_{x_0}^{x} \dd \tilde{x} \, h(\tilde{x})
+\]
+\end{framedprop}
 
+\newpage
 \subsection{Variation der Konstanten}
+\vspace{5pt}
+\begin{framedprop}[Variation der Konstanten]
+Falls eine \textit{lineare} DGL 1. Ordnung der Form $y'(x) = p(x) \, y(x) + q(x)$ vorliegt, kann Variation der Konstantne verwenden. Dabei nennt man $q(x)$ die Inhomogenität.
 
+\begin{enumerate}
+	\item Lösen der homogenen DGL mithilfe von Trennung der Variablen: $y'(x) = p(x) \, y(x)$
+	\[
+	y_h(x) = y_0 \exp\left(\int_{x_0}^{x} \dd \tilde{x} \, p(\tilde{x})\right)
+	\]
+	
+	\item Wenn schon eine spezielle Lösung $y_s(x)$ bekannt ist, dann ist die allgemeine Lösung der DGL die Summe der homogenen und speziellen Lösung: $y(x) = y_s(x) + y_h(x)$
+	
+	\item Bestimmung der speziellen Lösung durch Variation der Konstanten:
+	\[
+	y_h(x) = c \, \exp\left(\int_{x_0}^{x} \dd \tilde{x} \, p(\tilde{x})\right) \ \Rightarrow\ y(x) = c(x) \, \exp\left(\int_{x_0}^{x} \dd \tilde{x} \, p(\tilde{x})\right)
+	\]
+	\[
+	\Rightarrow\ y'(x) = c'(x) \, \exp\left(\int_{x_0}^{x} \dd \tilde{x} \, p(\tilde{x})\right) + c(x) \, \exp\left(\int_{x_0}^{x} \dd \tilde{x} \, p(\tilde{x})\right) \, p(x)
+	\]
+	\[
+	\Rightarrow\ y'(x) = c'(x) \, \exp\left(\int_{x_0}^{x} \dd \tilde{x} \, p(\tilde{x})\right) + y(x) \, p(x)
+	\]
+	Gleichsetzen mit inhomogener DGL:
+	\[
+	p(x) \, y(x) + q(x) = c'(x) \, \exp\left(\int_{x_0}^{x} \dd \tilde{x} \, p(\tilde{x})\right) + y(x) \, p(x)
+	\]
+	\[
+	\Rightarrow\ c'(x) = q(x) \, \exp\left(-\int_{x_0}^{x} \dd \tilde{x} \, p(\tilde{x})\right)
+	\]
+	\[
+	\Rightarrow\ c(x) = \int_{x_0}^{x} \dd \tilde{x} \, q(\tilde{x}) \, \exp\left(- \int_{x_0}^{\tilde{x}} \dd \hat{x} \, p(\hat{x})\right) + y_0
+	\]
+	$c(x)$ kann jetzt wieder in $y(x)$ von oben eingesetzt werden. Allgemein gilt die Formel:
+	\[
+	y(x) = y_0 \, \exp(P(x)) + \int_{x_0}^{x} \dd \tilde{x} \, q(\tilde{x}) \exp(P(x) - P(\tilde{x})) 
+	\]
+	wobei 
+	\[
+	P(x) = \int_{x_0}^{x} \dd \tilde{x} \, p(\tilde{x})
+	\]
+\end{enumerate}
+
+\end{framedprop}
+
+\newpage
 \subsection{Differentialgleichungssysteme}
 
-\section{Partielle Differentialgleichungen (PDEs)}
+allgemein\\2. Ordnung 

@@ -116,33 +116,33 @@ Die Punkte im $\R^3$ seien anstatt durch die kartesischen Koordinaten $x,y,z$ du
 Im Allgemeinen sind die Einheitsvektoren vom Ort $\mathbf{r}$ abhängig. Nur in Spezialfällen (z.B. bei kartesischen Koordinaten) sind diese unabhängig. Die drei Einheitsvekoren bilden ein lokales Dreibein. Oft praktisch sind krummlinig-orthogonal Koordinaten, d.h. $\mathbf{e}_{u_{i}} \cdot \mathbf{e}_{u_{j}} = \delta_{ij}$.
 \end{framedprop}
 
-\begin{framedprop}[Wichtige krummlinige Koordinaten]
-	\begin{itemize}
-		\item Polarkoordinaten:
-		\[
-		\mathbf{r} = \left(\begin{array}{c} r \cos\phi \\ r \sin\phi \end{array} \right) \textrm{ mit } \det \frac{\partial (x,y)}{\partial (r, \phi)} = r \textrm{ und } \dd A = r \, \dd r \, \dd \phi
-		\]
-		wobei $r \in [0, \infty)$, $\phi \in [0,2\pi)$ und $r = \sqrt{x^2 + y^2}$, $\tan\phi = \frac{y}{x}$ (Quadrant beachten!).
-		\item Zylinderkoordinaten:
-		\[
-		\mathbf{r} = \left(\begin{array}{c} \rho \cos\phi \\ \rho \sin\phi \\ z \end{array} \right) \textrm{ mit } \det \frac{\partial (x,y,z)}{\partial (\rho, \phi, z)} = \rho \textrm{ und } \dd V = \rho \, \dd \rho \, \dd \phi \, \dd z
-		\]
-		wobei $\rho \in [0, \infty)$, $\phi \in [0,2\pi)$ und $z \in \R$. Außerdem ist wieder $\rho = \sqrt{x^2 + y^2}$, $\tan\phi = \frac{y}{x}$.
-		\item Kugelkoordinaten:
-		\[
-		\mathbf{r} = \left(\begin{array}{c} \rho \sin\theta \cos\phi \\ \rho \sin\theta \sin\phi \\ \rho \cos\theta \end{array} \right) \textrm{ mit } \det \frac{\partial (x,y,z)}{\partial (\rho, \theta, \phi)} = \rho^2 \sin\theta \textrm{ und } \dd V = \rho^2 \sin\theta \, \dd \rho \, \dd \theta \, \dd \phi
-		\]
-		wobei $\rho \in [0, \infty)$, $\theta \in [0,\pi]$ und $\phi \in [0,2\pi)$. Wieder gilt: $\rho = \sqrt{x^2+y^2+z^2}$, $\theta = \frac{\pi}{2} - \arctan\frac{z}{\sqrt{x^2+y^2}}$ und $\tan\phi = \frac{y}{x}$.
-	\end{itemize}
-\end{framedprop}
+\begin{frameddefn}[Polarkoordinaten]
+\[
+\mathbf{r} = \left(\begin{array}{c} r \cos\phi \\ r \sin\phi \end{array} \right) \textrm{ mit } \det \frac{\partial (x,y)}{\partial (r, \phi)} = r \textrm{ und } \dd A = r \, \dd r \, \dd \phi
+\]
+wobei $r \in [0, \infty)$, $\phi \in [0,2\pi)$ und $r = \sqrt{x^2 + y^2}$, $\tan\phi = \frac{y}{x}$ (Quadrant beachten!).
+\end{frameddefn}
 
-\newpage 
+\begin{frameddefn}[Zylinderkoordinaten]
+\[
+\mathbf{r} = \left(\begin{array}{c} \rho \cos\phi \\ \rho \sin\phi \\ z \end{array} \right) \textrm{ mit } \det \frac{\partial (x,y,z)}{\partial (\rho, \phi, z)} = \rho \textrm{ und } \dd V = \rho \, \dd \rho \, \dd \phi \, \dd z
+\]
+wobei $\rho \in [0, \infty)$, $\phi \in [0,2\pi)$ und $z \in \R$. Außerdem ist wieder $\rho = \sqrt{x^2 + y^2}$, $\tan\phi = \frac{y}{x}$.	
+\end{frameddefn}
+
+\begin{frameddefn}[Kugelkoordinaten]
+\[
+\mathbf{r} = \left(\begin{array}{c} \rho \sin\theta \cos\phi \\ \rho \sin\theta \sin\phi \\ \rho \cos\theta \end{array} \right) \textrm{ mit } \det \frac{\partial (x,y,z)}{\partial (\rho, \theta, \phi)} = \rho^2 \sin\theta \textrm{ und } \dd V = \rho^2 \sin\theta \, \dd \rho \, \dd \theta \, \dd \phi
+\]
+wobei $\rho \in [0, \infty)$, $\theta \in [0,\pi]$ und $\phi \in [0,2\pi)$. Wieder gilt: $\rho = \sqrt{x^2+y^2+z^2}$, $\theta = \frac{\pi}{2} - \arctan\frac{z}{\sqrt{x^2+y^2}}$ und $\tan\phi = \frac{y}{x}$.	
+\end{frameddefn}
+
 \section{Kurvenintegrale}
 
 \begin{framedprop}[Kurvenintegral durch Substitution lösen]
 Sei $K$ eine Kurve die durch $\mathbf{r}_a = \mathbf{r}(t_a)$ und $\mathbf{r}_b = \mathbf{r}(t_b)$ im Vektorfeld $\mathbf{F}(\mathbf{r})$ geht. Dann gilt:
 \[
-\int_{\mathbf{r}_a}^{\mathbf{r}_b} \dd \mathbf{r} \cdot \mathbf{F}(\mathbf{r}) = \int_{t_a}^{t_b} \dd t \cdot \mathbf{F}(t)
+\int_{\mathbf{r}_a}^{\mathbf{r}_b} \dd \mathbf{r} \cdot \mathbf{F}(\mathbf{r}) = \int_{t_a}^{t_b} \dd t \  \dot{\mathbf{r}}(t) \cdot \mathbf{F}(t)
 \]
 Bei geschlossenen Kurven $\mathbf{r}_a = \mathbf{r}_b$ schreibt man auch:
 \[
