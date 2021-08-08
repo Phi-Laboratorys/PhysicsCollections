@@ -2,6 +2,7 @@
 
 ## Theoretische Physik
 - [Physikalisches Rechnen](Physikalisches_Rechnen/skript.pdf)
+- [Theoretische Mechanik](Theoretische_Mechanik/skript.pdf)
 
 ## Mathematik
 - [Analysis](Analysis/skript.pdf)

@@ -1,0 +1,85 @@
+\section{Koordinatensysteme}
+
+\begin{frameddefn}[Basisvektoren]
+
+Bei gegebenen Koordinaten $\mathbf{r} = ( \theta_1, \theta_2, \theta_3 )^T$ werden die Basisvektoren wie folgt berechnet:
+
+\[ \mathbf{e}_{\theta_{i}} = \left| \frac{\dd \mathbf{r}}{\dd \theta_i} \right|^{-1} \frac{\dd \mathbf{r}}{\dd \theta_i} \qquad i = 1,2,3 \]
+	
+\end{frameddefn}
+
+\begin{frameddefn}[Koordinatendarstellungen]
+
+\begin{enumerate}
+	\item \textbf{Kartesische Koordinaten} \[ \mathbf{r} = \left(\begin{array}{c} x \\ y \\ z \end{array} \right) \]
+	\item \textbf{Zylinderkoordinaten} mit $\det(J) = \rho$ \[ \mathbf{r} = \left(\begin{array}{c} \rho \cos \phi \\ \rho \sin \phi \\ z \end{array} \right) \qquad \begin{array}{c} \mathbf{r} = \rho \mathbf{e}_\rho( \phi ) + z \mathbf{e}_z \\ \mathbf{\dot{r}} = \dot{\rho} \mathbf{e}_\rho + \rho \dot{\phi} \mathbf{e}_\phi + \dot{z} \mathbf{e}_z \\ \mathbf{\ddot{r} = (\ddot{\rho} - \rho \dot{\phi}^2) \mathbf{e}_\rho} + (2\dot\rho\dot\phi + \rho \ddot\phi) \mathbf{e}_\phi + \ddot z \mathbf{e}_z \end{array}\]
+	\item \textbf{Kugelkoordinaten} mit $\det(J) = r^2 \sin\theta$
+		\[ \mathbf{r} = \left(\begin{array}{c} r \sin \theta \cos \phi \\ r \sin \theta \sin \phi \\ r \cos \theta \end{array} \right) \qquad \begin{array}{c} \mathbf{r} = r \mathbf{e}_r( \theta, \phi ) \\ \mathbf{\dot{r}} = \dot{r} \mathbf{e}_r + r \dot{\theta} \mathbf{e}_\theta + r \sin \theta \dot\phi \mathbf{e}_\phi \\  \end{array}\]
+		\[ \mathbf{\ddot r}= (\ddot r - r \dot\theta^2 - r \dot\phi^2 \sin^2 \theta)\mathbf{e}_r + (2 \dot r \dot\theta + r \ddot\theta - r \dot\phi^2 \sin\theta\cos\theta)\mathbf{e}_\theta \]
+		\[ + (2 \dot r \dot\phi \sin \theta + 2r \dot\theta \dot\phi \cos\theta + r \ddot\phi \sin\theta)\mathbf{e}_\phi \]
+\end{enumerate}
+	
+\end{frameddefn}
+
+
+
+\section{Newtonsche Gesetze}
+
+\begin{frameddefn}[Newtonsche Gesetze]
+	\begin{enumerate}
+		\item Ein kräftefreier Körper bewegt sich mit konstanter Geschwindigkeit \[\mathbf{F} = 0 \ \Rightarrow\  \mathbf{v} = \textrm{const}\]
+		\item Kraft ist Masse mal Beschleunigung \[\mathbf{F} = m \mathbf{a}\]
+		\item Der Kraft, mit der die Umgebung auf einen Massepunkt wirkt, entspricht stehts eine gleich große, gegengerichtete Kraft, mit der der Massepunkt auf seine Umgebung wirkt. \[\mathbf{F}_{actio} = -\mathbf{F}_{reactio}\]
+	\end{enumerate}
+	
+	Zusätze:
+	\begin{enumerate}
+		\item Kräfte wirken (meist) entlang einer Wirkungslinie
+		\item Superpositionsprinzip: $\mathbf{F}_{tot} = \sum_i \mathbf{F}_i$
+	\end{enumerate}
+\end{frameddefn}
+
+
+\section{Erhaltungssätze}
+
+\begin{frameddefn}[Impulserhaltung]
+	Impuls: \[\mathbf{p} = m \mathbf{v}\]
+	
+	Damit folgt: \[\mathbf{\dot{p}} = \mathbf{F} = 0 \ \Rightarrow\ \mathbf{p} = \textrm{const}\]
+	
+\end{frameddefn}
+
+\begin{frameddefn}[Drehimpulserhaltung]
+	Drehimpuls:
+	\[ \mathbf{l} = \mathbf{r} \times \mathbf{p} = m \mathbf{r} \times \mathbf{\dot{r}}\]
+	
+	Drehmoment:
+	\[ \mathbf{M} = \mathbf{r} \times \mathbf{F} = m \mathbf{r} \times \mathbf{\ddot{r}} \]
+	
+	Drehimpuls und Drehmoment hängen vom Ursprung des Koordinatensystems ab!
+	Es folgt:
+	\[ \mathbf{\dot{l}} = \mathbf{M} = 0 \ \Rightarrow \ \mathbf{l} = \textrm{const} \]
+\end{frameddefn}
+
+\begin{frameddefn}[Energieerhaltung]
+	Arbeit: $\dd W = \mathbf{F} \cdot \dd \mathbf{r} \ \Rightarrow \ W = \int_C \mathbf{F(r)} \cdot \dd \mathbf{r}$
+	
+	Leistung: $ P = \frac{\dd W}{ \dd t} = \mathbf{F} \cdot \mathbf{\dot r}$
+	
+	Konservative Kraft $ \iff \nabla \times \mathbf{F} = 0$
+	
+	Kinetische Energie: $T = \frac{m}{2} \mathbf{\dot r}^2$
+	
+	Potenzielle Energie bei konservativen Kräften: $\mathbf{F} = - \nabla U(\mathbf{r})$
+	
+	Für konservative Kräfte gilt Energieerhaltung: $E = T + U = \textrm{const}$
+\end{frameddefn}
+
+
+\section{Raum-Zeit Symmetrien}
+Galilei Trafo, Sym Folgen
+
+\section{System von Massepunkten}
+
+\section{Inertialsysteme und beschleunigte Bezugssysteme}
+

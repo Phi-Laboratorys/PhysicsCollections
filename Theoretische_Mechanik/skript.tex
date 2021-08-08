@@ -1,0 +1,99 @@
+\documentclass[a4paper, 12pt]{report}
+
+%%%%%%%%%%%%
+% Packages %
+%%%%%%%%%%%%
+
+\usepackage[german]{babel}
+\usepackage[noheader]{../packages/sleek}
+\usepackage{../packages/sleek-title}
+\usepackage{../packages/sleek-theorems}
+\usepackage{../packages/sleek-listings}
+
+\usepackage[textsize=scriptsize]{todonotes}
+
+%%%%%%%%%%%%%%
+% Title-page %
+%%%%%%%%%%%%%%
+
+\logo{../resources/logo/ubt.pdf}
+\institute{Universität Bayreuth}
+\faculty{Physik}
+%\department{Department of Anything but Psychology}
+\title{Theoretische Mechanik}
+\subtitle{Stoffsammlung}
+\author{von\\Moritz Schramm}%\textit{Author}\\François \textsc{Rozet}}
+%\supervisor{Linus \textsc{Torvalds}}
+%\context{Well, I was bored...}
+\date{Sommersemester 2021}
+
+%%%%%%%%%%%%%%%%
+% Bibliography %
+%%%%%%%%%%%%%%%%
+
+\addbibresource{../resources/bib/references.bib}
+
+%%%%%%%%%%
+% Others %
+%%%%%%%%%%
+
+\lstdefinestyle{latex}{
+    language=TeX,
+    style=default,
+    %%%%%
+    commentstyle=\ForestGreen,
+    keywordstyle=\TrueBlue,
+    stringstyle=\VeronicaPurple,
+    emphstyle=\TrueBlue,
+    %%%%%
+    emph={LaTeX, usepackage, textit, textbf, textsc}
+}
+
+\FrameTBStyle{latex}
+
+\def\tbs{\textbackslash}
+
+\newcommand{\dd}{\mathrm{d}} % derivative
+\newcommand{\R}{\mathbb{R}} % real numbers
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\st}{{:}\ }	% a ":" (such that) with correct spacing
+
+\renewcommand{\labelitemi}{\tiny$\square$}
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+    \romantableofcontents
+
+    \chapter{Grundlagen}
+    \input{./content/chap1.tex}
+    
+    \chapter{Lagrange Formalismus}
+    \input{./content/chap2.tex}
+    
+	\chapter{Variationskalkül}
+	\input{./content/chap3.tex}
+	
+	\chapter{Zentralpotenzial}
+	\input{./content/chap4.tex}
+	
+	\chapter{Starre Körper}
+	\input{./content/chap5.tex}
+	
+	\chapter{Kleine Schwingungen}
+	\input{./content/chap6.tex}
+	
+	\chapter{Hamiltonformalismus}
+	\input{./content/chap7.tex}
+	
+	\chapter{Spezielle Relativitätstheorie}
+	\input{./content/chap8.tex}
+
+
+\end{document}
