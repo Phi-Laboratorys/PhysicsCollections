@@ -1,6 +1,75 @@
 \section{Lagrange Gleichungen 1. Art}
 
+\begin{frameddefn}[Zwangsbedingungen]
+
+Eine Zwangsbedingung schränkt die Koordinaten auf eine Bahn oder Ebene ein. Eine \textit{holonome} Zwangsbedingung hat folgende Form:
+
+\[ g(\mathbf{r}, t) = 0 \]
+
+Falls die Zwangsbedingung unabhängig von $t$ ist, nennt man sie \textit{skleronom}, ansonsten \textit{rheonom}.
+	
+\end{frameddefn}
+
+\begin{frameddefn}[Lagrange Gleichungen 1. Art]
+	
+	Eine Zwangsbedingung wird durch eine Zwangskraft $\mathbf{Z} = \lambda(t) \nabla g(\mathbf{r}, t)$ sichergestellt. Für $R$ Zwangsbedingungen und $N$ Teilchen ergeben sich die Lagrange Gleichungen 1. Art zu:
+	
+	\[ m_n \ddot x_n = F_n + \sum^R_{\alpha=1} \lambda_\alpha(t) \frac{\partial g_\alpha(x_1,...,x_{3N}, t)}{\partial x_n}  \]
+	
+	Für ein Teilchen und nur eine Zwangsbedingung also:
+	
+	\[ m \mathbf{\ddot r} = \mathbf{F} + \mathbf{Z} = \mathbf{F} + \lambda(t) \nabla g(\mathbf{r}, t) \]
+	
+	Impuls und Drehimpuls sind erhalten wenn $\mathbf{F} + \mathbf{Z} = 0$ gilt. Außerdem gilt für die Energie:
+	
+	\[ \frac{\dd E}{\dd t} = - \sum_\alpha \lambda_\alpha \frac{\partial g_\alpha}{\partial t} \ \Rightarrow \ E = \textrm{const} \ \textrm{ wenn } \ \forall \alpha \st \frac{\partial g_\alpha}{\partial t} = 0 \]
+	
+\end{frameddefn}
+
+\begin{framedmeth}[Allgemeins Vorgehen um 1. Art zu lösen]
+	
+	\begin{enumerate}
+		\item Formulierung der Zwangsbedingungen durch $g_\alpha = 0$
+		\item Aufstellen der Lagrange Gleichungen 1. Art
+		\item Elimination der $\lambda_\alpha$ indem $\frac{\dd^2 g_\alpha}{\dd t^2}$ berechnet wird
+		\item Lösung der Bewegungsgleichungen
+		\item Bestimmung der Integrationskonstanten
+		\item Bestimmung der Zwangskräfte mit $\mathbf{Z} = \lambda(t) \nabla g(\mathbf{r}, t)$
+	\end{enumerate}
+	
+\end{framedmeth}
+
+
 \section{Lagrange Gleichungen 2. Art}
+
+\begin{frameddefn}[Verallgemeinerte Koordinaten]
+
+Mit $R$ Zwangsbedingungen hat ein System noch $f = 3N - R$ Freiheitsgrade. Diese werden mit verallgemeinerten Koordinaten $q_1, ... , q_f$ dargestellt. Dazu ist eine Transformation 
+
+\[ x_n = x_n(q_1, ..., q_f, t) = x_n(q,t) \]
+
+notwendig. Die Zwangsbedingungen sowie die kinetische Energie $T = \sum_n \frac{m}{2} \dot x_n^2$ und die potenzielle Energie können dann mit verallgemeinerten Koordinaten formuliert werden:
+
+\[ T(q, \dot q, t) \qquad U(q,t) \qquad g_\alpha(q,t) = 0 \]
+	
+\end{frameddefn}
+
+\begin{frameddefn}[Lagrange Gleichungen 2. Art]
+
+Die Lagrange Funktion wird wie folgt definiert:
+
+\[ \mathscr{L}(q,\dot q, t) = T(q, \dot q, t) - U(q,t) \]
+
+Eine Koordinate $q_k$ heißt \textit{zyklisch}, falls $\frac{\partial \mathscr{L}}{\partial q_k} = 0$.
+
+Der verallgemeinerte (oder auch kanonische) Impuls ist $p_k = \frac{\partial \mathscr{L}}{\partial \dot q_k}$.
+
+Die Lagrange Gleichungen 2. Art sind dann $f$ DGLs 2. Ordnung:
+
+\[ \frac{\dd}{\dd t} \frac{\partial \mathscr{L}}{\partial \dot q_k} = \frac{\partial \mathscr{L}}{\partial q_k} \]
+	
+\end{frameddefn}
+
 
 \section{Hamiltonsches Prinzip}
 

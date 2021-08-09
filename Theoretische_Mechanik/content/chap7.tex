@@ -1,1 +1,21 @@
-Hamiltonfunktion und Gleichungen
+
+\begin{frameddefn}[Hamilton-Funktion]
+	\[H(q,p,t) = \sum^f_{i=1} \dot q_i(q,p,t) \, p_i - \mathscr{L}(q, \dot q(q,p,t), t) \]
+	mit dem verallgemeinerten Impuls $p_i = \frac{\partial \mathscr{L}}{\partial \dot q_i}$
+\end{frameddefn}
+
+\begin{framedprop}[Hamilton-Gleichungen]
+	\[ \dot p_k = - \frac{\partial H}{\partial q_k} \]
+	\[ \dot q_k = \frac{\partial H}{\partial p_k} \]
+	
+	Im Gegensatz zu den $f$ DGLs 2. Ordnung im Lagrangeformalismus erhält im Hamiltonformalismus $2f$ DGLs 1. Ordnung.
+\end{framedprop}
+
+\begin{framedthm}[Energieerhaltung]
+Falls in der kinetischen Energie die generalisierte Geschwindigkeit nur quadratisch vorkommt und die potenzielle Energie nur von den generalisierten Koordinaten abhängt, gilt:
+
+\[ H(q,p,t) = T + U = E \]
+
+\[ \frac{\dd H}{\dd t} = \frac{\partial H}{\partial t} = -\frac{\partial \mathscr{L}}{\partial t} \ \textrm{ und damit }\  \frac{\partial \mathscr{L}}{\partial t} = 0 \ \Rightarrow \ H = \textrm{const}\]
+	
+\end{framedthm}
