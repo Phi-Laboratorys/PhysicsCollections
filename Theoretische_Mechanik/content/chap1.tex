@@ -77,7 +77,6 @@ Bei gegebenen Koordinaten $\mathbf{r} = ( \theta_1, \theta_2, \theta_3 )^T$ werd
 
 
 \section{Raum-Zeit Symmetrien}
-Galilei Trafo, Sym Folgen
 
 \begin{framedprop}[Allgemeine Galilei Transformation]
 	\[ x_i' = \alpha_{ij} x_j - v_i t - a_i \ \textrm{ und } \ t' = t - t_0 \]
@@ -103,8 +102,48 @@ Galilei Trafo, Sym Folgen
 	\end{itemize}
 \end{framedthm}
 
-
+\newpage
 \section{System von Massepunkten}
 
-\section{Inertialsysteme und beschleunigte Bezugssysteme}
+\begin{frameddefn}[Schwerpunkt, Gesamtimpuls und Energieerhaltung]
+	
+	Schwerpunkt: 
+	
+	\[ \mathbf{R} = \frac{1}{M} \sum_{i=1}^N m_i \mathbf{r}_i \]
+	
+	Damit folgt der Gesamtimpuls $\mathbf{P} = M \mathbf{R}$ und der Gesamtdrehimpuls $\mathbf{L} = \sum_i \mathbf{l}_i$ mit dem Gesamtdrehmoment $\mathbf{M} = \mathbf{\dot L}$.
+	
+	Im abgeschlossenen System wirken keine äußeren Kräfte und es gilt:
+	
+	\[ \mathbf{P} = \textrm{const} \qquad \mathbf{L} = \textrm{const} \qquad \mathbf{M} = 0 \]
+	
+	Die kinetische Energie ist mit $T = \sum_i \frac{m_i}{2} \mathbf{\dot r}_i^2$ gegeben und wenn alle inneren und äußeren Kräfte konservativ sind, ist die Energie erhalten.
+	
+\end{frameddefn}
+
+\section{Beschleunigte Bezugssysteme}
+
+\begin{frameddefn}[Linear beschleunigtes BS]
+	
+	Für ein linear beschleunigtes BS gilt $\mathbf{r}(t) = \mathbf{r}'(t) + \frac{\mathbf{a} t ^2}{2}$
+	
+	Daraus folgen die Bewegungsgleichungen im unbeschleunigten und beschleunigten System:
+	
+	\[ m \mathbf{ \ddot r} = 0 \qquad m \mathbf{\ddot r}' = - m \mathbf{a} \]
+	
+	$- m \mathbf{a}$ bezeichnet dabei die Trägheitskraft.
+	
+\end{frameddefn}
+
+\begin{frameddefn}[Rotierendes BS]
+	
+	Bei einem rotierenden BS dreht sich das BS um eine Achse $\vec{\omega} = \frac{\dd \vec{\varphi}}{\dd t}$. Dadurch gilt:
+	
+	\[ \mathbf{\dot r} = \mathbf{\dot r}' + \vec{\omega} \times \mathbf{r} \]
+	
+	\[ m \mathbf{\ddot r}' = -2m \, (\vec{\omega} \times \mathbf{\dot r}') - m \, \vec{\omega} \times (\vec{\omega} \times \mathbf{r}') \]
+	
+	Wobei $-2m \, (\vec{\omega} \times \mathbf{\dot r}')$ die Corioliskraft und $- m \, \vec{\omega} \times (\vec{\omega} \times \mathbf{r}')$ die Zentrifugalkraft ist.
+	
+\end{frameddefn}
 

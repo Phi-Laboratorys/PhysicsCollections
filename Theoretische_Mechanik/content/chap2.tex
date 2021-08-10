@@ -70,9 +70,44 @@ Die Lagrange Gleichungen 2. Art sind dann $f$ DGLs 2. Ordnung:
 	
 \end{frameddefn}
 
-
+\newpage
 \section{Hamiltonsches Prinzip}
+
+\begin{frameddefn}[Wirkungsfunktional]
+	Das Wirkungsfunktional ist wie folgt definiert:
+	
+	\[ S[q] = \int_{t_1}^{t_2} \dd t \, \mathscr{L}(q, \dot q, t) \]
+	
+	Das Prinzip der kleinsten Wirkung ($\delta S[q] = 0$) führt als Variationsproblem wieder zu den Lagrange Gleichungen.
+\end{frameddefn}
+
 
 \section{Eichtransformation}
 
+\begin{framedthm}[Eichtransformation]
+	
+	Verschiedene Lagrange Funktionen führen zu denselben Bewegungsgleichungen:
+	
+	\[ \delta \int_{t_1}^{t_2} \dd t \, \mathscr{L} = \delta \int_{t_1}^{t_2} \dd t \, \mathscr{L}^* = 0 \]
+	
+	wenn z.B. $\mathscr{L}^* = \textrm{const} \cdot \mathscr{L}$ oder $\mathscr{L}^* = \mathscr{L} + \textrm{ const}$. Allgemein führen alle Lagrange Funktionen auf dieselben Bewegungsgleichungen bei folgender Form:
+	
+	\[ \mathscr{L}^*(q, \dot q, t) = \mathscr{L}(q, \dot q, t) + \frac{\dd}{\dd t} f(q,t) \]
+	
+\end{framedthm}
+
 \section{Noether Theorem}
+
+\begin{framedthm}[Erhaltungsgröße des Noether Theorems]
+	
+	Das Noether Theorem besagt, wie aus Symmetrien Erhaltungsgrößen folgen. Betrachte dazu folgende Transformation:
+	
+	\[ q_i^* = q_i + \varepsilon \psi_i(q,\dot q, t) + \mathcal{O}(\varepsilon^2) \]
+	
+	\[ t^* =  t + \varepsilon \varphi(q, \dot q, t) + \mathcal{O}(\varepsilon^2) \]
+	
+	Bei der starken Annahme, dass die zwei Wirkungsfunktionale gleich sind ($S^*[q^*(t^*)] = S[q(t)]$) ergibt sich die folgende Erhaltungsgröße:
+	
+	\[ Q(q,\dot q, t) = \sum_{i=1}^f \frac{\partial \mathscr{L}}{\partial \dot q_i} \psi_i + (\mathscr{L} - \sum^f_{i=1} \frac{\partial \mathscr{L}}{\partial \dot q_i} \dot q_i) \, \varphi = \textrm{const} \]
+	
+\end{framedthm}
