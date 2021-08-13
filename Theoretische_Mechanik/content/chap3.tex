@@ -1,6 +1,71 @@
-\section{Euler Lagrange Gleichung}
+ \section{Euler Lagrange Gleichung}
+ 
+ \begin{frameddefn}[Funktional]
+ 	Ein Funktional weißt jeder Funktion $y$ einen Wert zu und hat meist die Form:
+ 	
+ 	\[ J[y] = \int_{x_1}^{x_2} \dd x \, F(x, y, y') \]
+ 	
+ 	Meistens integriert man über eine Zeit $\dd t$ oder eine Länge $\dd s$ und nutzt dann $v = \frac{\dd s}{\dd t}$ und $\dd s^2 = \dd x^2 + \dd y^2 \ \Rightarrow \ \dd s = \dd x \sqrt{1+y'^2}$
+ \end{frameddefn}
+ 
+ \begin{framedthm}[Euler Lagrange Gleichungen]
+ 	
+ 	Um das $y(x)$ zu finden, bei dem $J$ extremal wird, stellt man die Euler Lagrange Gleichungen auf:
+ 	
+ 	\[ \frac{\dd}{\dd x} \frac{\partial F}{\partial y'} = \frac{\partial F}{\partial y} \]
+ 	
+ 	Falls $\frac{\partial F}{\partial y} = 0$ vereinfacht sich die Gleichung zu:
+ 	
+ 	\[ \frac{\partial F}{\partial y'} = \textrm{const} \]
+ 	
+ 	Falls $\frac{\partial F}{\partial x} = 0$ vereinfacht sich die Gleichung zu (Beltrami Identität):
+ 	
+ 	\[ y' \, \frac{\partial F}{\partial y'} - F = \textrm{const} \]
+ 	
+ \end{framedthm}
 
 \section{Variation mit Nebenbedingungen}
 
-\section{Zweite Variation}
+\begin{framedthm}[Isoperimetrische Nebenbedingungen]
+	Eine isoperimetrische Nebenbedinung hat die Form
+	
+	\[ K[y] = \int_{x_1}^{x_2} \dd x \, G(x, y, y') \]
+	
+	Bei $R$ Nebenbedingungen ergibt sich die neue Funktion
+	
+	\[ F^*(x, y, y') = F - \sum_{i=1}^R \lambda_i G_i \]
+	
+	$y(x)$ lässt sich mit $F^*$ und der Euler-Lagrange Gleichung bestimmen.
+\end{framedthm}
+
+\begin{framedthm}[Holonome Nebenbedingungen]
+	
+	Eine holonome Nebenbedingung hat die Form
+	
+	\[ g(y, x) = 0 \]
+	
+	Diesmal gilt für $R$ Nebenbedingungen:
+	
+	\[ F^*(x, y, y') = F - \sum_{i=1}^R \lambda_i(x) g_i \]
+	
+\end{framedthm}
+
+
+\section{Variation mit mehreren Variablen}
+
+
+\begin{framedprop}[Mehrere unabhängige und abhängige Variablen]
+
+\[ I[y_1, ..., y_n] = \int \dd x_1 ... \dd x_m \, F(x_1,...,x_m, y_1,...,y_n, Y_{11},..., Y_{nm}) \]
+
+\[ \textrm{mit: } y_i = y_i(x_1,..., x_m) \qquad Y_{ij} = \frac{\partial y_i}{\partial x_j} \qquad i = 1,...,n\]
+
+Damit ergeben sich dann die Euler-Lagrange Gleichungen:
+
+\[ \sum_{j=1}^m \frac{\partial}{\partial x_j} \left(\frac{\partial F}{\partial Y_{ij}} \right) = \frac{\partial F}{\partial y_i} \qquad i = 1,...,n \]
+	
+\end{framedprop}
+
+
+
 
