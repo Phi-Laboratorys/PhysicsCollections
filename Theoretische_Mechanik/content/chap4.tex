@@ -1,7 +1,68 @@
-\section{Herleitung Bewegungsgleichungen}
+\section{Herleitung Bewegungsgleichungen und Lösung}
 
+\begin{framedprop}[Herleitung der Bewegungsgleichungen]
+	
+	Mit der Schwerpunkt und Relativkoordinate lässt sich die Lagrangefunktion entkoppeln:
+	
+	\[ \mathbf{R} = \frac{m_1 \mathbf{r}_1 + m_2 \mathbf{r}_2}{m_1+m_2}, \quad \mathbf{r} = \mathbf{r}_1 - \mathbf{r}_2 \ \Rightarrow \ \mathscr{L} = \mathscr{L}_1(\mathbf{R}, \mathbf{\dot R}) + \mathscr{L}_2(\mathbf{r}, \mathbf{\dot r})\]
+	
+	$\mathbf{R}$ ist zyklisch, damit ist der Schwerpunktimpuls erhalten und es folgt: $\mathbf{R}(t) = \mathbf{A} t + \mathbf{B}$. Die Lagrange Gleichungen liefern die Bewegungsgleichungen für die Relativbewegung. Durch die Rotations- und Zeitsymmetrie folgt aber Drehimpuls- und Energieerhaltung, wodurch sich insgesamt eine DGL 1. Ordnung ergibt (jeweils für $\varphi$ und $\rho$ wenn $\mathbf{r}$ in Zylinderkoordinaten dargestellt wird).
+	
+	Drehimpulserhaltung:
+	
+	\[ l = \mu \rho^2 \dot\varphi \qquad \Rightarrow \varphi(t)\]
+	
+	Energieerhaltung:
+	
+	\[ E = \frac{\mu}{2} \dot\rho^2 + \frac{l}{2\mu\rho^2} + U(\rho) \]
+	
+	Mit $\frac{\dd \varphi}{\dd \rho} = \frac{\partial \varphi}{\partial t}\frac{\dd t}{\dd \rho}$ folgt:
+	
+	\[ \varphi(\rho) = \varphi_0 + \int_{\rho_0}^{\rho} \dd \rho' \frac{l/\rho'^2}{\sqrt{2\mu (E-U) - l^2/\rho'^2}} \]
+	
+\end{framedprop}
+
+\newpage
 \section{Verschiedene Zentralpotenziale}
+
+\begin{frameddefn}[Wichtige Potenziale]
+	
+	\begin{enumerate}
+		\item Harmonischer Oszillator: $U(\rho) = \alpha (\rho-\rho_0)^2 \ \Rightarrow$ gebundene Bewegung
+		\item $U(\rho) = - \alpha / \rho$ (z.B. Gravitations- oder elektrostatisches Potenzial)\\
+		Falls $\alpha < 0$ ist das Potenzial rein repulsiv, die Bewegung also ungebunden. \\
+		Falls $\alpha > 0$ ist die Bewegung gebunden wenn $E < 0$, bei $E > 0$ ist die Bewegung ungebunden.
+	\end{enumerate}
+	
+\end{frameddefn}
 
 \section{Keplerproblem}
 
-\section{Streuung}
+\begin{frameddefn}[Parameter einer Ellipse]
+	
+	Exzentrizität $\varepsilon$ und Paramter $p$ ergeben die Ellipsengleichung
+	
+	\[ p = \frac{l^2}{\mu \alpha} \qquad \varepsilon = \sqrt(1 + \frac{2 E l^2}{\mu \alpha^2}) \qquad \Rightarrow \qquad \frac{p}{\rho} = 1 + \varepsilon \cos \varphi \]
+	
+	Es gilt:
+	\begin{itemize}
+		\item $\varepsilon = 0 \ \Rightarrow$ Kreis
+		\item $\varepsilon < 1 \ \Rightarrow$ Ellipse
+		\item $\varepsilon = 1 \ \Rightarrow$ Parabel
+		\item $\varepsilon > 1 \ \Rightarrow$ Hyperbel
+	\end{itemize}
+	
+	Große Halbachse $a$, kleine Halbachse $b$:
+	\[ a = \frac{p}{1 - \varepsilon^2} \qquad b = \frac{p}{\sqrt{1 - \varepsilon^2}} \qquad \Rightarrow \qquad \frac{(x+a\varepsilon)^2}{a^2} + \frac{y^2}{b^2} = 1\]
+	
+\end{frameddefn}
+
+\begin{framedthm}[Keplersche Gesetze]
+	\begin{enumerate}
+		\item Die Planetenbahnen sind Ellipsen mit der Sonne als Brennpunkt
+		\item Ein Fahrstrahl überstreicht bei gleicher Zeit die gleiche Fläche
+		\item Die Quadrate der Umlaufdauern sind proportional zu den Kuben der großen Halbachse
+	\end{enumerate}
+\end{framedthm}
+
+
