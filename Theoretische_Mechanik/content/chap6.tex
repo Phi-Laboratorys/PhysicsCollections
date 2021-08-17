@@ -1,1 +1,30 @@
-\section{Bewegungsgleichungen}
+
+\begin{framedprop}[Bewegungsgleichungen]
+	
+	Lagrange Funktion für kleine Schwingungen:
+	
+	\[ \mathscr{L}(x, \dot x, t) = \frac{m}{2} \dot x^2 - \frac{k}{2} x^2 + F(t)x \]
+	
+	Ergibt die Bewegungsgleichung:
+	
+	\[ \ddot x + \omega_0^2 x = f(t) \qquad \textrm{mit} \qquad f(t) = F(t)/m \quad \textrm{und} \quad \omega_0 = \sqrt{k/m} \]
+	
+	Eine Reibungskraft $2\lambda \dot x$ kann noch auf der linken Seite dazu addiert werden (gedämpfter harmonischer Oszillator).
+	
+\end{framedprop}
+
+\begin{framedprop}[System mit vielen Freiheitsgraden]
+	
+	Lagrange Funktion:
+	
+	\[ \mathscr{L} = \frac{1}{2} (\mathbf{\dot x}^T \mathbf{\underline T} \mathbf{\dot x} - \mathbf{x}^T \mathbf{\underline V} \mathbf{x}) \]
+	
+	Mit Bewegungsgleichungen:
+	
+	\[ \mathbf{\underline T} \mathbf{\ddot x} + \mathbf{\underline V} \mathbf{x} = 0 \]
+	
+	Mit dem komplexen Lösungsansatz $\mathbf{X}(t) = \mathbf{A} e^{-i \omega t}$ ergibt sich $(\mathbf{\underline V} - \omega^2 \mathbf{\underline T}) \mathbf{A} = 0$. Die $f$ nicht-trivialen Lösungen $\omega_k^2$ sind mit $\det(\mathbf{\underline V} - \omega^2 \mathbf{\underline T}) = 0$ gegeben. Lösung insgesamt:
+	
+	\[ \mathbf{x}(t) = \sum_{k=1}^f \mathbf{A}^{(k)} B_k \cos(\omega_k t + \alpha_k) \]
+	
+\end{framedprop}

@@ -1,5 +1,56 @@
-\section{Raumfestes Inertialsystem und körperfestes Koordinatensysteme}
+\section{Raumfestes Inertialsystem und körperfestes Koordinatensystem}
+
+\begin{frameddefn}[a]
+	
+	Eine starrer Körper hat 6 Freiheitsgrade: 3 für Position des SWP und 3 für die Orientierung im Raum. Das raumfeste Inertialsystem wird mit den Koordinaten $x,y,z$ beschrieben. Das körperfeste Koordinatensystem bewegt sich im Raum, die Koordinaten $x_1, x_2, x_3$ ruhen allerdings relativ zum Körper.\\
+	Die Rotationsgeschwindigkeit $\vec{\omega}$ ist unabhängig vom Koordinatensystem, die Translationsgeschwindigkeit ist dagegen abhängig.
+	
+\end{frameddefn}
 
 \section{Eulersche Winkel}
 
+\begin{frameddefn}[Eulersche Winkel]
+	
+	Die eulerschen Winkel sind generalisierte Koordinaten für die 3 Rotationsfreiheitsgrade des starren Körpers. Ein Schnitt zwischen $x,y$ und $x_1,x_2$ Ebene definiert eine Knotenlinie $K$. Dann sind die Winkel wie folgt definiert:
+	
+	\begin{itemize}
+		\item $\varphi$: Winkel zwischen $x$-Achse und $K$
+		\item $\psi$: Winkel zwischen $K$ und $x_1$-Achse
+		\item $\theta$: Winkel zwischen $z$-Achse und $x_3$-Achse
+	\end{itemize}
+	
+\end{frameddefn}
+
+\newpage
 \section{Trägheitstensor}
+
+\begin{frameddefn}[Trägheitstensor]
+	
+	Der Trägheitstensor $\mathbf{\underline \Theta}$ hängt vom gewählten körperfesten Koordinatensystem ab. Am besten man wählt das Koordinatensystem so, dass die Achsen durch die Hauptträgheitsachsen verlaufen (Symmetrieachsen bei symmetrischen Körpern). Dann ist der Tensor eine Diagonalmatrix mit Hauptträgheitsmomenten $\Theta_i = \Theta_{ii}$ als Einträgen. Allgemein:
+	
+	\[ \Theta_{ik} = \int_V d^3r \rho_m(\mathbf{r}) (r^2 \delta_{ik} - x_i x_k) \]
+	
+\end{frameddefn}
+
+\begin{framedprop}[Drehimpuls und kinetische Energie]
+
+	Drehimpuls eines starren Körpers mit Rotation $\vec{\omega}$:
+	
+	\[ \mathbf{L} = \mathbf{\underline \Theta} \cdot \vec{\omega} \]
+	
+	Im Allgemeinen gilt $\mathbf{L} \nparallel \vec{\omega}$.\\
+	Für die kinetische Energie gilt:
+	
+	\[ T = T_{trans} + T_{rot} = \frac{M}{2} \mathbf{\dot R}^2 + \frac{1}{2} \vec{\omega} \cdot (\mathbf{\underline \Theta} \cdot \vec{\omega}) \]
+	
+\end{framedprop}
+
+\begin{framedprop}[Eulersche Kreiselgleichungen]
+
+	Bewegungsgleichungen für die Rotation eines starren Körpers mit $\vec{\omega} = (\omega_1, \omega_2, \omega_3)^T$:
+	
+	\[ 0 = \Theta_1 \dot \omega_1 + (\Theta_3 - \Theta_2) \omega_2 \omega_3 \]
+	\[ 0 = \Theta_2 \dot \omega_2 + (\Theta_1 - \Theta_3) \omega_3 \omega_1 \]
+	\[ 0 = \Theta_3 \dot \omega_3 + (\Theta_2 - \Theta_1) \omega_1 \omega_2 \]
+	
+\end{framedprop}
