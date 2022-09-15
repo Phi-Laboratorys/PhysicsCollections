@@ -6,6 +6,12 @@
 
 ## Mathematik
 - [Analysis](Analysis/skript.pdf)
-- [Lineare Algebra](Lineare_Algebra/skript.pdf)
+
+# Zukünftige Sammlungen
+
+## Mathematik
+- [Lineare Algebra](Lineare_Algebra/skript.pdf) (work in progress)
+- [Höhere Mathematik](Höhere_Mathematik/skript.pdf) (work in progress)
 
 ## Experimentalphysik
+- work in progress
